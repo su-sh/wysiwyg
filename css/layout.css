@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+}
+
+
+
+/*=============================================
+=            Header Menu            =
+=============================================*/
+
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}
+
+
+
+
+/*=====  End of Header Menu  ======*/
+
+
+
+
+/*=============================================
+=            Main Cotainer            =
+=============================================*/
+
+.main-container {
+  background-color: aqua;
+  min-height: 80px;
+}
+
+/*=====  End of Main Cotainer  ======*/
+
+
+
+
+/*=============================================
+=            live display            =
+=============================================*/
+#live-display {
+  position: relative;
+  float: left;
+  background-color: white;
+  width: 75%;
+  min-height: 760px;
+}
+
+/*=====  End of live display  ======*/
+
+
+
+
+/*=============================================
+=            right menu            =
+=============================================*/
+
+
+.right-menu {
+  float: right;
+  width: 25%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  min-height: 1000px;
+  background-color: #333;
+}
+
+.create-menu {
+  vertical-align: middle;
+  text-align: center;
+  line-height: 50px;
+  margin: 10px;
+  background-color: blue;
+  width: 100px;
+  height: 50px;
+}
+
+/*=====  End of right menu  ======*/
