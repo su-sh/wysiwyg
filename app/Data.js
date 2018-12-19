@@ -142,7 +142,8 @@ class Data {
     console.log('Data=', this.currentMouseClickElId, document.getElementById(this.currentMouseClickElId));
     document.getElementById(this.currentMouseClickElId).style.outline = '1px solid red';
 
-    document.getElementById(this.prevMouseClickElId).style.outline = '';
+    if (this.prevMouseClickElId != this.currentMouseClickElId)
+      document.getElementById(this.prevMouseClickElId).style.outline = '';
 
   }
 

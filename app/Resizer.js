@@ -20,10 +20,11 @@ class Resizer {
     this.resizerElement.style.right = 0;
     this.resizerElement.style.bottom = 0;
     this.resizerElement.style.cursor = 'se-resize';
+    this.resizerElement.contentEditable = false;
 
     console.log(this.resizerElement);
-    console.log('parent',this.parentEl);
-    
+    console.log('parent', this.parentEl);
+
     this.parentEl.appendChild(this.resizerElement);
     this.resizerElement.addEventListener('mousedown', this.initResize.bind(this), false);
   }
@@ -33,7 +34,7 @@ class Resizer {
   }
   initResize(e) {
     console.log('initResize');
-    this.eventHandler=this.Resize.bind(this);
+    this.eventHandler = this.Resize.bind(this);
     window.addEventListener('mousemove', this.eventHandler, false);
     window.addEventListener('mouseup', this.stopResize.bind(this), false);
   }

@@ -8,13 +8,15 @@ class Text extends HTML {
     console.log('parent id ', this.parentId)
     this.textEl = undefined;
     this.resizer = undefined;
-    this.id = Utils.generateRandomId();
+    this.id = 'txt_' + Utils.generateRandomId();
 
     var that = this;
 
 
 
     this.init();
+
+
   }
 
   init() {
@@ -33,7 +35,7 @@ class Text extends HTML {
 
 
     console.log('Text child Appended')
-
+    this.textEl.addEventListener('mousedown', this.mouseClick.bind(this));
 
     this.textEl.addEventListener('dragover', this.dragOver.bind(this));
     this.textEl.addEventListener('dragenter', this.dragEnter);
@@ -46,7 +48,11 @@ class Text extends HTML {
   }
 
 
-
+  //overwrite
+  mouseClick() {
+    console.log('hsih');
+    Data.setCurrentMouseClickElId(this.id)
+  }
 
   dragOver(e) {
 

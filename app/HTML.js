@@ -45,8 +45,8 @@ class HTML {
 
 
   mouseClick() {
-    // console.log('mouseClick this', this.id)
+    console.log('mouseClick this is cool', this.id)
     Data.setCurrentMouseClickElId(this.id);
-    console.log('MouseClick',Data.getCurrentMouseClickElId())
+    console.log('MouseClick', Data.getCurrentMouseClickElId())
   }
 }

@@ -14,6 +14,10 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="./app/css/style.css" />
 
+
+  <!-- ICON  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,9 +30,86 @@
       <div class="menu">
 
         <div class="text-menu">
-          <div class="text-alignment">
-            
+          <div class="text-alignment clearfix">
+            <div id="center-align-text" class=" text-align-icon left">
+              <i class="material-icons">
+                format_align_center
+              </i>
+            </div>
+
+            <div id="justify-align-text" class=" text-align-icon left">
+              <i class="material-icons">
+                format_align_justify
+              </i>
+            </div>
+
+            <div id="left-align-text" class=" text-align-icon left">
+              <i class="material-icons">
+                format_align_left
+              </i>
+            </div>
+
+            <div id="right-align-text" class=" text-align-icon left">
+              <i class="material-icons">
+                format_align_right
+              </i>
+            </div>
+
           </div>
+
+
+
+          <div class="font-weight-menu clearfix">
+            <div id="bold-text" class="font-weight-menu left">
+              <i class="material-icons">
+                format_bold
+              </i>
+            </div>
+
+            <div id="italic-text" class="left font-weight-menu">
+              <i class="material-icons">
+                format_italic
+              </i>
+            </div>
+
+
+
+
+
+            <div id="underline-text" class="left font-weight-menu">
+              <i class="material-icons">
+                format_underlined
+              </i>
+            </div>
+
+
+            <div id="color-text" class="left font-weight-menu">
+              <i class="material-icons">
+                colorize
+              </i>
+            </div>
+          </div>
+
+
+          <div class="font-family-menu">
+            <select id="input-font" class="input">
+              <option value="Times New Roman" selected="selected">Times New Roman</option>
+              <option value="Arial">Arial</option>
+            </select>
+          </div>
+
+          <div class="font-size-menu">
+            <select id="input-font" class="input">
+              <option value="16" selected="selected">16</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+
+              <option value="24">24</option>
+
+              <option value="28">28</option>
+            </select>
+          </div>
+
         </div>
 
       </div>
@@ -68,23 +149,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script src="./app/Main.js"></script>
   <script src="./app/Menu.js"></script>
   <script src="./app/MenuElement.js"></script>
@@ -96,9 +160,11 @@
   <script src="./app/Image.js"></script>
 
 
+  <script src="./app/EditTextMenu.js"></script>
+
 
   <script src="./app/Resizer.js"></script>
-  <script src="./app/Resize.js"></script>
+
   <script src="./app/Drag.js"></script>
 
 

@@ -8,14 +8,13 @@ class Image extends HTML {
     this.parentId = parentId;
     this.imageEl = undefined;
     this.resizer = undefined;
-    this.id = Utils.generateRandomId();
+    this.id = 'img_' + Utils.generateRandomId();
     // this.sectionType = sectionType;
     var that = this;
 
     this.init();
 
   }
-
 
 
   init() {
@@ -57,7 +56,7 @@ class Image extends HTML {
     imageElement.src = './1.jpg';
 
 
-    
+
     return returnObject;
   }
 }
