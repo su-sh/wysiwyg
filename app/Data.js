@@ -144,7 +144,6 @@ class Data {
 
     if (this.prevMouseClickElId != this.currentMouseClickElId)
       document.getElementById(this.prevMouseClickElId).style.outline = '';
-
   }
 
   static getCurrentMouseClickElId() {

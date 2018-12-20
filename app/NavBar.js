@@ -11,7 +11,6 @@ class NavBar extends HTML {
     this.navType = navType;
 
     this.init();
-
   }
 
   init() {
@@ -21,11 +20,6 @@ class NavBar extends HTML {
     this.navBarEl = this.createNewElement(this.navType);
 
     document.getElementById(this.parentId).appendChild(this.navBarEl);
-
-    // console.log('this is new', document.querySelector(`#${this.id} ul`));
-    // document.querySelector(`#${this.id} ul`).style.listStyleType = 'none ';
-    // document.querySelector(`#${this.id} li`).className += 'nav-li';
-    // document.querySelector(`#${this.id} li a`).className += 'nav-li-a';
 
     document.querySelector(`#${this.id} ul`).className += 'clearfix';
     document.querySelector(`#${this.id} ul`).style.listStyleType = 'none';
@@ -57,8 +51,8 @@ class NavBar extends HTML {
       console.log('navMenu', 'Should Apend as relative', document.getElementById(this.parentId).style.position);
     }
 
-    console.log('ho', document.getElementById(this.parentId).style.position);
-    console.log('child Appended')
+    console.log('child appended', document.getElementById(this.parentId).style.position);
+
 
   }
 
