@@ -12,5 +12,4 @@ class Utils {
     else
       return "";
   }
-
 }

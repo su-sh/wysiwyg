@@ -1,5 +1,5 @@
 console.log('MenuElement.js');
-
+const TAG = 'MenuElement.js';
 // let thatMenuElement;
 class MenuElement {
   constructor(id) {
@@ -20,7 +20,7 @@ class MenuElement {
 
   createNewElement() {
     console.log('createNewEl ', this.id)
-    // console.log('DOas',document.getElementById(Data.getCurrentDragOver()).tagName.toLowerCase());    
+    // console.log('DOas',document.getElementById(Data.getCurrentDragOver()).tagName.toLowerCase());
 
     if (document.getElementById(Data.getcurrentDragOverDivId()) === 'div') {
       console.log('DO ', document.getElementById(Data.getcurrentDragOverDivId()));
@@ -36,7 +36,7 @@ class MenuElement {
 
       case 'create-text':
         console.log('create Text');
-        var text= new Text(Data.getcurrentDragOverDivId());
+        var text = new Text(Data.getcurrentDragOverDivId());
         break;
 
       case 'create-button':
@@ -46,7 +46,12 @@ class MenuElement {
 
       case 'create-image':
         console.log('image created');
-        var image= new Image(Data.getcurrentDragOverDivId());
+        var image = new Image(Data.getcurrentDragOverDivId());
+        break;
+
+      case 'create-nav-bar':
+        console.log(TAG, 'create nav bar');
+        var navBar = new NavBar(Data.getcurrentDragOverDivId());
         break;
 
       default:

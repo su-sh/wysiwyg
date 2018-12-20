@@ -3,7 +3,7 @@ console.log('EditText.js');
 class EditTextMenu {
   constructor() {
 
-
+    this.that = this;
     this.centerAlignTextEL = undefined;
     this.justifyAlignTextEl = undefined;
     this.leftAlignText = undefined;
@@ -13,11 +13,12 @@ class EditTextMenu {
     this.italicTextEl = undefined;
     this.underlineTextEl = undefined;
 
-    this.fontFamilyMenu = undefined;
+    this.fontFamilyMenuSelect = undefined;
 
 
     this.init();
     this.addEvent();
+
   }
 
 
@@ -31,26 +32,55 @@ class EditTextMenu {
     this.italicTextEl = document.getElementById('italic-text');
     this.underlineTextEl = document.getElementById('underline-text');
 
-    this.fontFamilyMenu = document.getElementById('font-family-menu');
+    this.fontFamilyMenuSelect = document.getElementById('text-font-select');
+    this.fontSizeMenuInputEl = document.getElementById('text-size-select');
+
   }
 
 
   addEvent() {
-    this.centerAlignTextEL.addEventListener('mousedown', this.changeCenterAlignText);
+    this.centerAlignTextEL.addEventListener('mousedown', this.changeCenterAlignText.bind(this));
     this.justifyAlignTextEl.addEventListener('mousedown', this.changeJustifyAlignText);
-    this.leftAlignText.addEventListener('mousedown', this.changeLeftAlignText);
+    this.leftAlignText.addEventListener('mousedown', this.changeLeftAlignText.bind(this));
     this.rightAlignTextEl.addEventListener('mousedown', this.changeRightAlignText);
 
 
 
     this.boldTextEl.addEventListener('mousedown', this.changeBoldText);
     this.italicTextEl.addEventListener('mousedown', this.changeItalicText);
-    this.underlineTextEl.addEventListener('mousedown', this.changeUnderlineText)
+    this.underlineTextEl.addEventListener('mousedown', this.changeUnderlineText);
 
+
+
+    this.fontFamilyMenuSelect.addEventListener('change', this.changeFontText.bind(this));
+    this.fontSizeMenuInputEl.addEventListener('change', this.changeTextSize.bind(this));
+  }
+
+
+  changeFontText() {
+    this.setFont(this.fontFamilyMenuSelect.value);
+  }
+
+  setFont(fontFamily) {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
+      console.log('bold')
+      document.getElementById(Data.getCurrentMouseClickElId()).style.fontFamily = fontFamily;
+      this.fontFamilyMenuSelect.style.fontFamily = fontFamily;
+    }
   }
 
 
 
+  changeTextSize() {
+    this.setTextSize(this.fontSizeMenuInputEl.value);
+  }
+  setTextSize(textSize) {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
+      console.log('bold')
+      document.getElementById(Data.getCurrentMouseClickElId()).style.fontSize = textSize;
+      this.fontSizeMenuInputEl.style.fontFamily = this.fontFamilyMenuSelect.style.fontFamily;
+    }
+  }
   /*=============================================
   =            Text alignment            =
   =============================================*/
@@ -71,7 +101,6 @@ class EditTextMenu {
 
   changeUnderlineText() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-
       document.getElementById(Data.getCurrentMouseClickElId()).style.textDecoration = 'underline';
     }
   }
@@ -96,9 +125,13 @@ class EditTextMenu {
 
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
       if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'center') {
+        // this.centerAlignTextEL.style.backgroundColor = 'white';
+        this.centerAlignTextEL.style.backgroundColor = 'white';
+        console.log(this.centerAlignTextEL.id);
         document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'center';
       } else {
         document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
+        this.centerAlignTextEL.style.backgroundColor = 'inherit';
       }
 
     }
@@ -116,17 +149,28 @@ class EditTextMenu {
     }
   }
 
-
-  changeLeftAlignText() {
-    console.log('changeLeft');
+  changeAlign(type) {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
 
-      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'left') {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'left';
+      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != type) {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = type;
       } else {
         document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
       }
     }
+  }
+
+  changeLeftAlignText() {
+    console.log('changeLeft');
+    this.changeAlign('left');
+    // if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
+
+    //   if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'left') {
+    //     document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'left';
+    //   } else {
+    //     document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
+    //   }
+    // }
   }
   changeRightAlignText() {
     console.log('changeRight')

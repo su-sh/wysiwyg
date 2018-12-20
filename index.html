@@ -12,9 +12,28 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
 
 
+  <!-- appcss -->
+
+
   <link rel="stylesheet" type="text/css" media="screen" href="./app/css/style.css" />
 
 
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Lobster+Two|Maven+Pro|Open+Sans|Roboto|Ubuntu|Vollkorn"
+    rel="stylesheet">
+
+
+  <!--
+  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Vollkorn', serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  -->
   <!-- ICON  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -31,25 +50,25 @@
 
         <div class="text-menu">
           <div class="text-alignment clearfix">
-            <div id="center-align-text" class=" text-align-icon left">
+            <div id="center-align-text" class=" text-align-icon left" title="Align Center">
               <i class="material-icons">
                 format_align_center
               </i>
             </div>
 
-            <div id="justify-align-text" class=" text-align-icon left">
+            <div id="justify-align-text" class=" text-align-icon left" title="Align Justify">
               <i class="material-icons">
                 format_align_justify
               </i>
             </div>
 
-            <div id="left-align-text" class=" text-align-icon left">
+            <div id="left-align-text" class=" text-align-icon left" title="Align Left">
               <i class="material-icons">
                 format_align_left
               </i>
             </div>
 
-            <div id="right-align-text" class=" text-align-icon left">
+            <div id="right-align-text" class=" text-align-icon left" title="Align Right">
               <i class="material-icons">
                 format_align_right
               </i>
@@ -60,13 +79,13 @@
 
 
           <div class="font-weight-menu clearfix">
-            <div id="bold-text" class="font-weight-menu left">
+            <div id="bold-text" class="font-weight-menu left" title="Bold">
               <i class="material-icons">
                 format_bold
               </i>
             </div>
 
-            <div id="italic-text" class="left font-weight-menu">
+            <div id="italic-text" class="left font-weight-menu" title="Italic">
               <i class="material-icons">
                 format_italic
               </i>
@@ -76,7 +95,7 @@
 
 
 
-            <div id="underline-text" class="left font-weight-menu">
+            <div id="underline-text" class="left font-weight-menu" title="Underline">
               <i class="material-icons">
                 format_underlined
               </i>
@@ -91,23 +110,55 @@
           </div>
 
 
+          <!--
+  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Vollkorn', serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  -->
           <div class="font-family-menu">
-            <select id="input-font" class="input">
-              <option value="Times New Roman" selected="selected">Times New Roman</option>
-              <option value="Arial">Arial</option>
+            <select id="text-font-select" class="input">
+              <option value="Open Sans" style="font-family:Open Sans" selected="selected">Open Sans</option>
+              <option value="Lato" style="font-family:Lato">Lato</option>
+              <option value="Roboto" style="font-family:Roboto">Roboto</option>
+              <option value="Ubuntu" style="font-family:Ubuntu">Ubuntu</option>
+              <option value="Maven Pro" style="font-family:Maven Pro">Maven Pro</option>
+              <option value="Lobster" style="font-family:Lobster">Lobster</option>
+              <option value="Lobster 2" style="font-family:Lobster Two">Lobster 2</option>
             </select>
           </div>
 
           <div class="font-size-menu">
-            <select id="input-font" class="input">
-              <option value="16" selected="selected">16</option>
-              <option value="18">18</option>
-              <option value="20">20</option>
+            <input id="text-size-select" type="number" value="16">
+          </div>
 
-              <option value="24">24</option>
+        </div>
 
-              <option value="28">28</option>
-            </select>
+
+
+        <div class="div-menu">
+          <div class="align-margin">
+
+          </div>
+        </div>
+
+
+        <div class="nav-menu">
+
+          <div class="nav-menu-el" style="">
+            <i class="material-icons">
+              add
+            </i>
+          </div>
+
+          <div class="nav-menu-el">
+            <i class="material-icons">
+              remove
+            </i>
           </div>
 
         </div>
@@ -141,6 +192,10 @@
           Text
         </div>
 
+        <div id="create-nav-bar" class="create-menu" draggable="true">
+          NavBar Menu
+        </div>
+
       </div>
     </div>
 
@@ -158,6 +213,7 @@
   <script src="./app/Text.js"></script>
   <script src="./app/Button.js"></script>
   <script src="./app/Image.js"></script>
+  <script src="./app/NavBar.js"></script>
 
 
   <script src="./app/EditTextMenu.js"></script>
@@ -176,6 +232,7 @@
 <script>
   var main = new Main();
   // var html = new HTML();
+
 </script>
 
 </html>

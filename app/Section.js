@@ -7,7 +7,7 @@ class Section extends HTML {
     this.parentId = parentId;
     this.sectionEl = undefined;
     this.resizer = undefined;
-    this.id = 'div_'+Utils.generateRandomId();
+    this.id = 'div_' + Utils.generateRandomId();
     this.sectionType = sectionType;
 
     this.init();
@@ -107,8 +107,6 @@ class Section extends HTML {
     returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
 
     returnObject.style.position = 'relative';
-
-
     return returnObject;
   }
 
