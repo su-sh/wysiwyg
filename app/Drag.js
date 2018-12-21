@@ -35,8 +35,9 @@ class Dragger {
 
 
     this.draggerElement.style.cursor = 'grabbing';
-
+    this.parentEl.style.position = 'absolute';
     this.parentEl.style.top = e.clientY + 'px';
+
 
     let currentx = this.parentEl.style.width;
     console.log(currentx)

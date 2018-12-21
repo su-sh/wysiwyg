@@ -49,8 +49,9 @@ class Text extends HTML {
 
 
   //overwrite
-  mouseClick() {
-    console.log('hsih');
+  mouseClick(e) {
+    e.stopPropagation();
+
     Data.setCurrentMouseClickElId(this.id)
   }
 

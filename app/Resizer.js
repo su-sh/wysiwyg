@@ -6,7 +6,7 @@ class Resizer {
     this.resizerElement = undefined;
     this.eventHandler = undefined;
     this.init();
-    console.log('resizer')
+    console.log('resizer');
   }
 
 
@@ -24,6 +24,7 @@ class Resizer {
 
     console.log(this.resizerElement);
     console.log('parent', this.parentEl);
+
 
     this.parentEl.appendChild(this.resizerElement);
     this.resizerElement.addEventListener('mousedown', this.initResize.bind(this), false);
@@ -47,6 +48,4 @@ class Resizer {
     console.log('mouseup');
     window.removeEventListener('mousemove', this.eventHandler, false);
   }
-
-
 }

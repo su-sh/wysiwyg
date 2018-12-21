@@ -19,6 +19,9 @@ class Menu {
     var navBar = new MenuElement('create-nav-bar');
     new EditTextMenu();
     new NavBarMenu();
+    new ColorDivMenu();
+    new UploadImageMenu();
+    new GenerateHTML();
 
   }
 

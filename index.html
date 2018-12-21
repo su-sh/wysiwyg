@@ -17,8 +17,6 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="./app/css/style.css" />
 
-
-
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Lobster+Two|Maven+Pro|Open+Sans|Roboto|Ubuntu|Vollkorn"
     rel="stylesheet">
@@ -46,9 +44,9 @@
 
     <div class="header">
 
-      <div class="menu">
+      <div class="menu clearfix">
 
-        <div class="text-menu">
+        <div class="text-menu left">
           <div class="text-alignment clearfix">
             <div id="center-align-text" class=" text-align-icon left" title="Align Center">
               <i class="material-icons">
@@ -140,14 +138,27 @@
 
 
 
-        <div class="div-menu">
+        <div class="div-menu left">
           <div class="align-margin">
 
           </div>
         </div>
 
 
-        <div class="nav-menu">
+        <div class="color-menu left">
+          <div class="div-color-picker">
+            <i class="material-icons">
+              color_lens
+            </i>
+          </div>
+
+          <canvas id="div-cp-cvs" style="display: none">
+
+          </canvas>
+        </div>
+
+
+        <div class="nav-menu left">
 
           <div class="nav-menu-el" id="add-nav-item">
             <i class="material-icons">
@@ -163,6 +174,25 @@
 
         </div>
 
+
+        <div class="img-menu">
+          <input type="file" class="img-menu-el" id="add-image">
+
+          </input>
+
+          <div class="img-menu-el" id="remove-image">
+            <i class="material-icons">
+              remove_from_queue
+            </i>
+          </div>
+        </div>
+
+
+        <div class="download-html right">
+
+          <input type="button" id="download-btn" value="DownloadHTML">
+
+        </div>
       </div>
 
     </div>
@@ -196,7 +226,10 @@
           NavBar Menu
         </div>
 
+
       </div>
+
+
     </div>
 
   </div>
@@ -218,6 +251,8 @@
 
   <script src="./app/EditTextMenu.js"></script>
   <script src="./app/NavBarEditMenu.js"></script>
+  <script src="./app/ColorDivMenu.js"></script>
+  <script src="./app/UploadImageMenu.js"></script>
 
 
   <script src="./app/Resizer.js"></script>
@@ -227,6 +262,13 @@
 
   <script src="./app/Data.js"></script>
   <script src="./app/Utils.js"></script>
+
+
+
+  <script src="./app/GenerateHTML.js"></script>
+
+
+  </script>
 
 </body>
 

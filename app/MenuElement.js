@@ -46,7 +46,7 @@ class MenuElement {
 
       case 'create-image':
         console.log('image created');
-        var image = new Image(Data.getcurrentDragOverDivId());
+        var image = new ImageDiv(Data.getcurrentDragOverDivId());
         break;
 
       case 'create-nav-bar':

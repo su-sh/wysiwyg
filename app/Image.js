@@ -1,7 +1,7 @@
 console.log('image.js');
 
 
-class Image extends HTML {
+class ImageDiv extends HTML {
   constructor(parentId) {
 
     super();
@@ -15,6 +15,7 @@ class Image extends HTML {
     this.init();
 
   }
+
 
 
   init() {
@@ -53,10 +54,20 @@ class Image extends HTML {
     imageElement.style.width = 'inherit';
     imageElement.style.height = 'inherit';
 
-    imageElement.src = './1.jpg';
+    imageElement.src = './app/asset/imgPlaceholder.png';
+
+    imageElement.addEventListener('mousedown', this.clickEvent.bind(this));
 
 
 
     return returnObject;
+  }
+
+
+  clickEvent(e) {
+    // console.log('parentId', this.imageEl.id)
+    e.stopPropagation();
+
+    Data.setCurrentMouseClickElId(this.imageEl.id);
   }
 }
