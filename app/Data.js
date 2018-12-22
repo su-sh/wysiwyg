@@ -77,9 +77,12 @@ class Data {
     if (this.currentMouseClickElId != this.currentMouseOverElId) {
       document.getElementById(this.currentMouseOverElId).style.outline =
         "1px solid black";
+
       document.getElementById(this.currentMouseOverElId).style.outlineStyle =
         "dashed";
 
+
+      document.getElementById(this.currentMouseOverElId).style.opacity = '.8';
       // child node
       let child = document.getElementById(this.currentMouseOverElId).childNodes;
 
@@ -91,6 +94,8 @@ class Data {
       document.getElementById(this.prevMouseOverElId).style.outline = "none";
       document.getElementById(this.prevMouseOverElId).style.outlineStyle =
         "none";
+      document.getElementById(this.currentMouseOverElId).style.opacity = '';
+
     }
 
     console.log("FromSetCurrentMouseOver: Current", this.currentMouseOverElId);
