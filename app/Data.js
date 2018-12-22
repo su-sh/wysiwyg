@@ -6,18 +6,12 @@ class Data {
     this.domTree = [];
     this.domList = [];
 
-
-
-
-
-
     /*=============================================
     =            mouseOver            =
     =============================================*/
     this.currentMouseOverElId = undefined;
     this.prevMouseOverElId = undefined;
     /*=====  End of mouseOver  ======*/
-
 
     /*=============================================
     =            mouseClicked            =
@@ -26,11 +20,7 @@ class Data {
     this.currentMouseClickElId = undefined;
     this.prevMouseClickElId = undefined;
 
-
     /*=====  End of mouseClicked  ======*/
-
-
-
   }
 
   static getCurrentMenuDrag() {
@@ -41,7 +31,6 @@ class Data {
   static setCurrentMenuDrag(data) {
     this.currentMenu = data;
   }
-
 
   /*=============================================
   =            Dom Tree getter and setter            =
@@ -55,17 +44,11 @@ class Data {
   }
   /*=====  End of Dom Tree getter and setter  ======*/
 
-
-
   /*=============================================
   =            Dom list             =
   =============================================*/
 
-
-
   /*=====  End of Dom list   ======*/
-
-
 
   /*=============================================
   =            GetSet current DragOverElement            =
@@ -81,85 +64,74 @@ class Data {
 
   /*=====  End of GetSet current DragOverElement  ======*/
 
-
-
-
-
   /*=============================================
   =            MouseOver Div hover            =
   =============================================*/
 
   static setCurrentMouseOverElId(mouseOverElId) {
-
-
     this.prevMouseOverElId = this.currentMouseOverElId;
     this.currentMouseOverElId = mouseOverElId;
 
     // if (document.getElementById(this.currentMouseOverElId))
 
     if (this.currentMouseClickElId != this.currentMouseOverElId) {
+      document.getElementById(this.currentMouseOverElId).style.outline =
+        "1px solid black";
+      document.getElementById(this.currentMouseOverElId).style.outlineStyle =
+        "dashed";
 
-      document.getElementById(this.currentMouseOverElId).style.outline = '1px solid black';
-      document.getElementById(this.currentMouseOverElId).style.outlineStyle = 'dashed';
+      // child node
+      let child = document.getElementById(this.currentMouseOverElId).childNodes;
+
+
 
     }
 
     if (this.currentMouseClickElId != this.prevMouseOverElId) {
-      document.getElementById(this.prevMouseOverElId).style.outline = 'none';
-      document.getElementById(this.prevMouseOverElId).style.outlineStyle = 'none';
+      document.getElementById(this.prevMouseOverElId).style.outline = "none";
+      document.getElementById(this.prevMouseOverElId).style.outlineStyle =
+        "none";
     }
 
-
-    console.log('FromSetCurrentMouseOver: Current', this.currentMouseOverElId);
-    console.log('FromSetCurrentMouseOver: Prev', this.prevMouseOverElId);
-
+    console.log("FromSetCurrentMouseOver: Current", this.currentMouseOverElId);
+    console.log("FromSetCurrentMouseOver: Prev", this.prevMouseOverElId);
   }
 
   static getCurrentMouseOverElId() {
     return this.currentMouseOverElId;
   }
-  resetMouseOver() {
-
-  }
-
+  resetMouseOver() {}
 
   /*=====  End of MouseOver Div hover  ======*/
-
-
-
-
 
   /*=============================================
   =            MouseClick            =
   =============================================*/
 
   static setCurrentMouseClickElId(mouseClickElId) {
-
     this.prevMouseClickElId = this.currentMouseClickElId;
     this.currentMouseClickElId = mouseClickElId;
 
+    console.log(
+      "Data=",
+      this.currentMouseClickElId,
+      document.getElementById(this.currentMouseClickElId)
+    );
+    document.getElementById(this.currentMouseClickElId).style.outline =
+      "1px solid green";
+    document.getElementById(this.currentMouseClickElId).style.zIndex = "100";
 
-    console.log('Data=', this.currentMouseClickElId, document.getElementById(this.currentMouseClickElId));
-    document.getElementById(this.currentMouseClickElId).style.outline = '1px solid red';
-
-    if (this.prevMouseClickElId != this.currentMouseClickElId)
-      document.getElementById(this.prevMouseClickElId).style.outline = '';
+    if (this.prevMouseClickElId != this.currentMouseClickElId) {
+      document.getElementById(this.prevMouseClickElId).style.outline = "";
+      document.getElementById(this.currentMouseClickElId).style.zIndex = "0";
+    }
   }
 
   static getCurrentMouseClickElId() {
     return this.currentMouseClickElId;
   }
 
-
-
-  setClickIdentifyBorder() {
-
-  }
-
+  setClickIdentifyBorder() {}
 
   /*=====  End of MouseClick  ======*/
-
-
-
-
 }

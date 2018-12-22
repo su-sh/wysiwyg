@@ -15,7 +15,7 @@ class Menu {
     var buttonMenu = new MenuElement('create-button');
     var imageMenu = new MenuElement('create-image');
     var textMenu = new MenuElement('create-text');
-
+    var listMenu = new MenuElement('create-list');
     var navBar = new MenuElement('create-nav-bar');
     new EditTextMenu();
     new NavBarMenu();
