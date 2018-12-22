@@ -31,10 +31,15 @@ class Deleter {
   initDelete(e) {
     e.stopPropagation();
 
-    this.eventHandler = this.deleteEl.bind(this);
-    console.log('grandParent', this.grandParentEl);
+    let answer = confirm("Delete Element?")
+    if (answer) {
 
-    this.grandParentEl.removeChild(this.parentEl);
+      this.eventHandler = this.deleteEl.bind(this);
+      console.log('grandParent', this.grandParentEl);
+
+      this.grandParentEl.removeChild(this.parentEl);
+    }
+
     // window.addEventListener('mouseup', this.stopDelete.bind(this), false);
   }
   deleteEl() {
