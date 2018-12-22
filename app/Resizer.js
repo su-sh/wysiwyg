@@ -25,7 +25,6 @@ class Resizer {
     console.log(this.resizerElement);
     console.log('parent', this.parentEl);
 
-
     this.parentEl.appendChild(this.resizerElement);
     this.resizerElement.addEventListener('mousedown', this.initResize.bind(this), false);
   }
