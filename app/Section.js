@@ -1,5 +1,5 @@
 console.log('Section.js');
-
+const DEFAULT_HEIGHT = 20
 class Section extends HTML {
 
   constructor(parentId, sectionType) {
@@ -40,7 +40,7 @@ class Section extends HTML {
 
     const resize = new Resizer(this.sectionEl);
     const dragger = new Dragger(this.sectionEl);
-
+    const deleter = new Deleter(document.getElementById(this.parentId), this.sectionEl)
 
 
 
@@ -100,12 +100,16 @@ class Section extends HTML {
     returnObject.id = this.id;
 
     returnObject.style.width = '100%';
-    returnObject.style.height = '100px';
+    returnObject.style.maxWidth = '100%';
+    returnObject.style.maxHeight = '100%';
+    returnObject.style.minHeight = '100px';
+    returnObject.style.overflow = 'hidden';
+
 
     //test
     var colorArray = ['aqua', 'green', 'blue', 'black', 'yellow', 'pink', 'white'];
     returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
-
+    returnObject.style.backgroundColor = '';
     returnObject.style.position = 'relative';
     return returnObject;
   }

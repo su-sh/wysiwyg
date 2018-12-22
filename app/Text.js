@@ -12,12 +12,9 @@ class Text extends HTML {
 
     var that = this;
 
-
-
     this.init();
-
-
   }
+
 
   init() {
     super.setHtmlParentId(this.parentId);
@@ -37,10 +34,10 @@ class Text extends HTML {
     console.log('Text child Appended')
     this.textEl.addEventListener('mousedown', this.mouseClick.bind(this));
 
-    this.textEl.addEventListener('dragover', this.dragOver.bind(this));
-    this.textEl.addEventListener('dragenter', this.dragEnter);
-    this.textEl.addEventListener('dragleave', this.dragLeave);
-    this.textEl.addEventListener('drop', this.dragDrop);
+    // this.textEl.addEventListener('dragover', this.dragOver.bind(this));
+    // this.textEl.addEventListener('dragenter', this.dragEnter);
+    // this.textEl.addEventListener('dragleave', this.dragLeave);
+    // this.textEl.addEventListener('drop', this.dragDrop);
 
     const resize = new Resizer(this.textEl);
     const dragger = new Dragger(this.textEl);
@@ -81,10 +78,10 @@ class Text extends HTML {
 
 
     returnObject.style.width = '80%';
-    returnObject.style.height = '50px';
+    returnObject.style.minHeight = '50px';
 
     //test
-    var colorArray = ['aqua', 'green', 'blue', 'black', 'yellow', 'pink', 'white'];
+    var colorArray = ['aqua', 'white', 'blue', 'black', 'yellow', 'pink', 'white'];
     returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
 
     returnObject.style.position = 'relative';
