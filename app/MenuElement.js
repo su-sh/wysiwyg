@@ -14,6 +14,7 @@ class MenuElement {
     document
       .getElementById(this.id)
       .addEventListener("dragstart", this.showFunction);
+    console.log('dragStart', this.id)
     document
       .getElementById(this.id)
       .addEventListener("dragend", this.createNewElement);

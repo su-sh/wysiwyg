@@ -45,7 +45,11 @@ class NavBar extends HTML {
 
     }
 
+    super.setHtmlParentId(this.parentId);
+    super.setHtmlId(this.id);
+    super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
+    // super.addClickHoverEvents();
 
     if (document.getElementById(this.parentId).style.position === 'absolute') {
       console.log('navMenu', 'Should Apend as relative', document.getElementById(this.parentId).style.position);
@@ -77,9 +81,10 @@ class NavBar extends HTML {
     var returnObject = document.createElement('div');
     returnObject.id = this.id;
     returnObject.style.width = '100%';
+    returnObject.style.height = '30px;'
+    returnObject.style.position = 'relative';
 
     var ulEl = document.createElement('ul');
-
 
     // liEl.appendChild(a1);
     ulEl.appendChild(this.addLi('Home'));

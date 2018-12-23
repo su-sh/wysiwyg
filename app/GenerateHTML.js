@@ -1,18 +1,46 @@
 console.log('Download.js');
 
+let thatGenerate;
 class GenerateHTML {
   constructor() {
     this.downloadBtnEl = undefined;
+    this.contentEditableItems = undefined;
     this.init();
     this.addEvent();
+    thatGenerate = this;
   }
 
   init() {
+    this.contentEditableItems = [];
     this.downloadBtnEl = document.getElementById('download-btn');
   }
 
   addEvent() {
-    this.downloadBtnEl.addEventListener('mousedown', this.generateElement.bind(this));
+    // this.downloadBtnEl.addEventListener('mousedown', this.generateElement.bind(this));
+    this.downloadBtnEl.addEventListener('mousedown', this.removeContentEditable.bind(this));
+
+  }
+
+
+  removeContentEditable() {
+    this.startRemove().then(this.generateElement.bind(this));
+
+  }
+
+  startRemove(x) {
+    var promise = new Promise(function (resolve, reject) {
+      thatGenerate.contentEditableItems = [];
+      thatGenerate.contentEditableItems = document.querySelectorAll('[contenteditable=true]');
+
+      for (var i = 0; i < thatGenerate.contentEditableItems.length; i++) {
+        console.log('editables', thatGenerate.contentEditableItems[i]);
+        thatGenerate.contentEditableItems[i].setAttribute("contenteditable", false);
+      }
+
+
+      resolve();
+    });
+    return promise;
   }
 
   generateElement() {
@@ -53,6 +81,12 @@ ${document.getElementById('live-display').innerHTML}
 
 `;
     this.download('index.html', htmlContent);
+
+    for (let i = 0; i < thatGenerate.contentEditableItems.length; i++) {
+      thatGenerate.contentEditableItems[i].setAttribute("contenteditable", true);
+
+    }
+
 
     var showEvent = new CustomEvent("show-d-r-d", {
       "detail": "Show Drag Resize Delete "

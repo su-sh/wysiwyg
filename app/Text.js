@@ -86,8 +86,8 @@ class Text extends HTML {
     returnObject.style.minHeight = '50px';
 
     //test
-    var colorArray = ['aqua', 'white', 'blue', 'black', 'yellow', 'pink', 'white'];
-    returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
+    // var colorArray = ['aqua', 'white', 'blue', 'black', 'yellow', 'pink', 'white'];
+    // returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
 
     returnObject.style.position = 'relative';
 

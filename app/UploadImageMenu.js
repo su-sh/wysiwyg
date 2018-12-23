@@ -7,6 +7,9 @@ class UploadImageMenu {
     this.addImgSrcInputEl = undefined;
     this.addImgSrcBtn = undefined;
 
+    this.imageObjectFitSelectEl = undefined;
+
+
     this.removeImgEl = undefined;
     this.init();
     this.addEvent();
@@ -17,6 +20,8 @@ class UploadImageMenu {
 
     this.addImgSrcInputEl = document.getElementById("add-img-url");;
     this.addImgSrcBtn = document.getElementById("add-img-btn");;
+    this.imageObjectFitSelectEl = document.getElementById('select-object-fill');
+
 
     this.removeImgEl = document.getElementById("remove-image");
   }
@@ -25,8 +30,29 @@ class UploadImageMenu {
     // this.addImgInputEl.addEventListener("change", this.readImg.bind(this));
     this.addImgSrcBtn.addEventListener('mousedown', this.readImgSrc.bind(this));
 
+
     this.removeImgEl.addEventListener("mousedown", this.removeImg.bind(this));
+    this.imageObjectFitSelectEl.addEventListener('change', this.changeObjectFit.bind(this));
+
   }
+
+
+  changeObjectFit() {
+    this.setObjectFit(this.imageObjectFitSelectEl.value);
+
+  }
+
+  setObjectFit(objFill) {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'img') {
+      console.log('obj Fill', objFill);
+
+      // document.getElementById(Data.getCurrentMouseClickElId()).style.objectFit
+      console.log(document.getElementById(Data.getCurrentMouseClickElId()).childNodes[0]);
+      document.getElementById(Data.getCurrentMouseClickElId()).childNodes[0].style.objectFit = objFill;
+      // document.getElementById(Data.getCurrentMouseClickElId()).style.fontFamily = fontFamily;
+    }
+  }
+
 
   readImgSrc() {
     console.log('ImgData', this.addImgSrcInputEl.value);

@@ -133,14 +133,14 @@ class DivMenu {
   }
 
   expandDiv() {
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'img') {
       document.getElementById(Data.getCurrentMouseClickElId()).style.width = '100%';
     }
   }
   shrinkDiv() {
     // console.log(document.getElementById(Data.getCurrentMouseClickElId()).style.width)
 
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'img') {
 
       document.getElementById(Data.getCurrentMouseClickElId()).style.width = '50%';
     }

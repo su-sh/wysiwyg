@@ -24,13 +24,21 @@ class Button extends HTML {
 
     console.log('Button child Appended')
 
-    // this.buttonEl.addEventListener('dragover', this.dragOver.bind(this));
-    this.buttonEl.addEventListener('dragenter', this.dragEnter);
-    this.buttonEl.addEventListener('dragleave', this.dragLeave);
-    this.buttonEl.addEventListener('drop', this.dragDrop);
 
-    const resize = new Resizer(this.buttonEl);
-    const dragger = new Dragger(this.buttonEl);
+    super.setHtmlParentId(this.parentId);
+    super.setHtmlId(this.id);
+    super.setDraggerResizerDeleter();
+    super.addClickHoverEvents();
+
+
+
+    // this.buttonEl.addEventListener('dragover', this.dragOver.bind(this));
+    // this.buttonEl.addEventListener('dragenter', this.dragEnter);
+    // this.buttonEl.addEventListener('dragleave', this.dragLeave);
+    // this.buttonEl.addEventListener('drop', this.dragDrop);
+
+    // const resize = new Resizer(this.buttonEl);
+    // const dragger = new Dragger(this.buttonEl);
 
   }
 
@@ -47,6 +55,7 @@ class Button extends HTML {
     returnObject.style.display = 'inline-block';
 
     returnObject.style.cursor = 'pointer';
+    returnObject.style.textAlign = 'middle';
 
     returnObject.style.fontFamily = 'Arial';
 

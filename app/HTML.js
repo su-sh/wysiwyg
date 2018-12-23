@@ -30,6 +30,7 @@ class HTML {
     this.deleter.removeDeleter();
     this.resizer.removeResizer();
     Data.removeOutlines();
+
   }
 
   showDragRresizeDelete() {

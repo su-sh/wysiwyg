@@ -47,7 +47,7 @@ class ImageDiv extends HTML {
 
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
-    console.log('TextId', this.id);
+
     super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
 
@@ -75,7 +75,7 @@ class ImageDiv extends HTML {
     returnObject.appendChild(imageElement);
     imageElement.style.width = 'inherit';
     imageElement.style.height = 'inherit';
-
+    imageElement.style.objectFit = 'fill';
     imageElement.src = './app/asset/imgPlaceholder.png';
 
     imageElement.addEventListener('mousedown', this.clickEvent.bind(this));

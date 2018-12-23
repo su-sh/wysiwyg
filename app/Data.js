@@ -6,6 +6,9 @@ class Data {
     this.domTree = [];
     this.domList = [];
 
+
+    this.removeContentEditStart = false;
+
     /*=============================================
     =            mouseOver            =
     =============================================*/
@@ -35,6 +38,17 @@ class Data {
     document.getElementById(this.currentMouseClickElId).style.zIndex = "";
 
   };
+
+  static makeContentEditableFalse() {
+    // contenteditable="true"
+    let contentEditableItems = document.querySelectorAll('[contenteditable=true]');
+
+    for (var i = 0; i < contentEditableItems.length; i++) {
+      console.log('editables', contentEditableItems[i]);
+
+    }
+  }
+
 
   static showOutlines() {
 
@@ -152,7 +166,11 @@ class Data {
     return this.currentMouseClickElId;
   }
 
-  setClickIdentifyBorder() {}
-
+  static getRemoveContentEditStart() {
+    return this.removeContentEditStart;
+  }
+  static setRemoveContentEditStart(bool) {
+    this.removeContentEditStart = bool;
+  }
   /*=====  End of MouseClick  ======*/
 }

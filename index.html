@@ -25,8 +25,20 @@
   <!-- ICON  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <style>
+    [draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+  }
+</style>
 
 </head>
+
 
 <body>
 
@@ -68,7 +80,7 @@
             </div>
 
             <div id="create-list" class="create-menu" draggable="true">
-              List
+              LIST
             </div>
           </div>
         </div>
@@ -279,6 +291,18 @@
                 remove_from_queue
               </i>
             </div>
+
+
+            <div class="select-object left">
+              <select id="select-object-fill" class="select-font menu-item">
+                <option value="fill" selected="selected">Fill</option>
+                <option value="contain">Contain</option>
+                <option value="cover">Cover</option>
+                <option value="none">None</option>
+                <option value="scale-down">Scale-Down</option>
+
+              </select>
+            </div>
           </div>
 
 
@@ -341,6 +365,19 @@
 <script>
   var main = new Main();
   // var html = new HTML();
+
+
+  window.onload = function () {
+    var dragItems = document.querySelectorAll('[draggable=true]');
+
+    for (var i = 0; i < dragItems.length; i++) {
+      dragItems[i].addEventListener('dragstart', function (event) {
+        event.dataTransfer.setData(' ', this.id);
+      });
+      console.log('done')
+    }
+
+  };
 
 </script>
 

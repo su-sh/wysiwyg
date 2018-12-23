@@ -16,7 +16,9 @@ class Utils {
 
 
   static checkIfImgSrc(src) {
-    var pattern = new RegExp('(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)');
+    let pattern = new RegExp('(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)');
+
+    // var pattern = new RegExp('(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)');
     if (!pattern.test(src)) {
       alert("Please enter a valid URL.");
       return false;

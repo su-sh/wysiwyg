@@ -22,6 +22,8 @@ class EditTextMenu {
     this.fontColorCanvasEl = undefined;
     this.fontColorCanvasContext = undefined;
 
+
+
     this.init();
     this.addEvent();
 
@@ -43,6 +45,9 @@ class EditTextMenu {
     this.fontColorMenuEl = document.getElementById('color-text');
     this.fontColorCanvasEl = document.getElementById('txt-cp-cvs');
     this.fontColorCanvasContext = this.fontColorCanvasEl.getContext("2d");
+
+
+
 
     window.addEventListener("load", this.loadImage.bind(this));
 
@@ -68,6 +73,9 @@ class EditTextMenu {
 
     this.fontColorMenuEl.addEventListener('mousedown', this.hideShow.bind(this));
     // this.fontColorMenuEl.addEventListener('dblclick', this.inheritColor.bind(this));
+
+
+
     this.fontColorCanvasEl.addEventListener(
       "mousedown",
       this.setRGB.bind(this)
@@ -139,20 +147,38 @@ class EditTextMenu {
   changeBoldText() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
       console.log('bold')
-      document.getElementById(Data.getCurrentMouseClickElId()).style.fontWeight = 'bold';
+      if (document.getElementById(Data.getCurrentMouseClickElId()).style.fontWeight != 'bold') {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.fontWeight = 'bold';
+      } else {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.fontWeight = '';
+      }
     }
+
   }
 
   changeItalicText() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-      document.getElementById(Data.getCurrentMouseClickElId()).style.fontStyle = 'italic';
+
+      if (document.getElementById(Data.getCurrentMouseClickElId()).style.fontStyle != 'italic') {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.fontStyle = 'italic';
+      } else {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.fontStyle = '';
+      }
+
     }
 
   }
 
   changeUnderlineText() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-      document.getElementById(Data.getCurrentMouseClickElId()).style.textDecoration = 'underline';
+
+      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textDecoration != 'underline') {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.textDecoration = 'underline';
+      } else {
+        document.getElementById(Data.getCurrentMouseClickElId()).style.textDecoration = '';
+      }
+
+
     }
   }
 
