@@ -22,7 +22,6 @@ class Deleter {
     this.deleterEl.style.cursor = 'se-resize';
     this.deleterEl.contentEditable = false;
 
-
     this.parentEl.appendChild(this.deleterEl);
 
     this.deleterEl.addEventListener('mousedown', this.initDelete.bind(this), false);
@@ -31,9 +30,6 @@ class Deleter {
   removeDeleter() {
     this.parentEl.removeChild(this.deleterEl);
   }
-
-
-
 
   initDelete(e) {
     e.stopPropagation();

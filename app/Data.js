@@ -22,11 +22,7 @@ class Data {
 
     /*=====  End of mouseClicked  ======*/
 
-
-
-
   }
-
 
   static removeOutlines() {
     document.getElementById(this.currentMouseOverElId).style.outlineStyle = "";
@@ -104,12 +100,9 @@ class Data {
       document.getElementById(this.currentMouseOverElId).style.outlineStyle =
         "dashed";
 
-
       // document.getElementById(this.currentMouseOverElId).style.opacity = '.8';
       // child node
       // let child = document.getElementById(this.currentMouseOverElId).childNodes;
-
-
 
     }
 

@@ -22,12 +22,10 @@ class EditTextMenu {
     this.fontColorCanvasEl = undefined;
     this.fontColorCanvasContext = undefined;
 
-
     this.init();
     this.addEvent();
 
   }
-
 
   init() {
     this.centerAlignTextEL = document.getElementById('center-align-text');
@@ -42,13 +40,11 @@ class EditTextMenu {
     this.fontFamilyMenuSelect = document.getElementById('text-font-select');
     this.fontSizeMenuInputEl = document.getElementById('text-size-select');
 
-
     this.fontColorMenuEl = document.getElementById('color-text');
     this.fontColorCanvasEl = document.getElementById('txt-cp-cvs');
     this.fontColorCanvasContext = this.fontColorCanvasEl.getContext("2d");
 
     window.addEventListener("load", this.loadImage.bind(this));
-
 
   }
 
@@ -57,20 +53,15 @@ class EditTextMenu {
 
   }
 
-
   addEvent() {
     this.centerAlignTextEL.addEventListener('mousedown', this.changeCenterAlignText.bind(this));
     this.justifyAlignTextEl.addEventListener('mousedown', this.changeJustifyAlignText);
     this.leftAlignText.addEventListener('mousedown', this.changeLeftAlignText.bind(this));
     this.rightAlignTextEl.addEventListener('mousedown', this.changeRightAlignText);
 
-
-
     this.boldTextEl.addEventListener('mousedown', this.changeBoldText);
     this.italicTextEl.addEventListener('mousedown', this.changeItalicText);
     this.underlineTextEl.addEventListener('mousedown', this.changeUnderlineText);
-
-
 
     this.fontFamilyMenuSelect.addEventListener('change', this.changeFontText.bind(this));
     this.fontSizeMenuInputEl.addEventListener('change', this.changeTextSize.bind(this));
@@ -82,9 +73,7 @@ class EditTextMenu {
       this.setRGB.bind(this)
     );
 
-
   }
-
 
   hideShow() {
     if (this.fontColorCanvasEl.style.display == "none") {
@@ -133,8 +122,6 @@ class EditTextMenu {
     }
   }
 
-
-
   changeTextSize() {
     this.setTextSize(this.fontSizeMenuInputEl.value);
   }
@@ -169,21 +156,11 @@ class EditTextMenu {
     }
   }
 
-
   /*=====  End of Text alignment  ======*/
-
-
-
-
-
-
-
 
   /*=============================================
   =            TextAlign            =
   =============================================*/
-
-
 
   changeCenterAlignText() {
 
@@ -249,6 +226,5 @@ class EditTextMenu {
   }
 
   /*=====  End of TextAlign  ======*/
-
 
 }

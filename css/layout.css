@@ -2,18 +2,92 @@
   width: 100%;
 }
 
+body {
+  margin: 0px;
+}
+
 /*=============================================
 =            Header Menu            =
 =============================================*/
+.logo>img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.logo {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.app-title {
+  font-size: 14px;
+  text-align: center;
+}
+
 
 .header {
   width: 100%;
   /* height: 100px; */
-  background-color: red;
+  background-color: #f1f4f9;
+
   position: fixed;
   top: 0;
   z-index: 1500;
 }
+
+.menu-title {
+  text-align: center;
+  font-size: 14px;
+  /* padding-top: 5px; */
+  padding-bottom: 5px;
+}
+
+
+
+
+#text-size-select {
+  width: 45px;
+  height: 24px;
+
+}
+
+#add-image>input {
+  font-family: 'Open Sans';
+  padding-left: 5px;
+}
+
+#add-img-url {
+  height: 24px;
+}
+
+
+#download-btn {
+  background-color: blue;
+  border: 0;
+  margin-top: 24px;
+  margin-right: 20px;
+  border-radius: 10px;
+  line-height: 40px;
+  height: 40px;
+  vertical-align: middle;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #f1f4f9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*=====  End of Header Menu  ======*/
 
@@ -24,7 +98,7 @@
 .main-container {
   background-color: aqua;
   min-height: 80px;
-  margin-top: 220px;
+  margin-top: 135px;
   padding-top: 10px;
 }
 
@@ -47,24 +121,81 @@
 =            right menu            =
 =============================================*/
 
-.right-menu {
+.top-menu {
   /* float: right;
   width: 25%; */
   padding-top: 15px;
   padding-bottom: 15px;
   /* min-height: 1000px; */
-  background-color: #333;
+  /* background-color: #b2bec3; */
+}
+
+.bottom-menu {
+  padding-top: 5px;
+  padding-bottom: 15px;
 }
 
 .create-menu {
   float: left;
-  vertical-align: middle;
   text-align: center;
-  line-height: 50px;
-  margin: 10px;
-  background-color: blue;
-  width: 100px;
-  height: 50px;
+  line-height: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #f8f9fc;
+  cursor: grab;
+  border-radius: 6px;
+  width: 120px;
+}
+
+
+.group {
+  border-right: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 24px;
+}
+
+.group-last {
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 24px;
+}
+
+
+
+.add-img {
+  /* width: 24px;
+  height: 24px; */
+  margin: 0 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.select-font {
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+}
+
+.menu-item {
+  /* padding: 4px 4px; */
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  margin-left: 2px;
+  margin-right: 2px;
+
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  /* #eeeeee */
+  border: 0;
+  background-color: #f8f9fc;
 }
 
 /*=====  End of right menu  ======*/
@@ -77,18 +208,17 @@
   float: left;
 }
 
-.text-align-icon {
-  cursor: pointer;
+.right {
+  float: right;
 }
+
 
 /*=====  End of TextAlign  ======*/
 
 /*=============================================
 =            FontWeight            =
 =============================================*/
-.font-weight-menu {
-  cursor: pointer;
-}
+
 
 /*=====  End of FontWeight  ======*/
 

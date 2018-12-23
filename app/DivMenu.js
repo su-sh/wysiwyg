@@ -24,16 +24,12 @@ class DivMenu {
 
   init() {
 
-
     this.widthExpandEl = document.getElementById("div-expand-width");
     this.widthShrinkEl = document.getElementById("div-shrink-width");
-
-
 
     this.flexRowEl = document.getElementById("flex-row");
     this.flexColumnEl = document.getElementById("flex-column");
     this.flexClearEl = document.getElementById("flex-clear");
-
 
     this.colorPickerEl = document.getElementById("div-color-picker");
     this.colorPickerCanvasEl = document.getElementById("div-cp-cvs");
@@ -110,14 +106,12 @@ class DivMenu {
   }
   event() {
 
-
     this.flexRowEl.addEventListener('mousedown', this.addFlexRow.bind(this));
     this.flexColumnEl.addEventListener('mousedown', this.addFlexColumn.bind(this))
     this.flexClearEl.addEventListener('mousedown', this.clearFlex.bind(this));
 
     this.colorPickerEl.addEventListener("mousedown", this.hideShow.bind(this));
     this.colorPickerEl.addEventListener("dblclick", this.inheritColor.bind(this));
-
 
     this.colorPickerCanvasEl.addEventListener(
       "mousedown",
@@ -127,7 +121,6 @@ class DivMenu {
     this.widthExpandEl.addEventListener('mousedown', this.expandDiv.bind(this));
     this.widthShrinkEl.addEventListener('mousedown', this.shrinkDiv.bind(this));
   }
-
 
   inheritColor() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
@@ -153,7 +146,6 @@ class DivMenu {
     }
   }
   setDivColor() {
-
 
   }
 

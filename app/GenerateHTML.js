@@ -1,6 +1,5 @@
 console.log('Download.js');
 
-
 class GenerateHTML {
   constructor() {
     this.downloadBtnEl = undefined;
@@ -8,11 +7,9 @@ class GenerateHTML {
     this.addEvent();
   }
 
-
   init() {
     this.downloadBtnEl = document.getElementById('download-btn');
   }
-
 
   addEvent() {
     this.downloadBtnEl.addEventListener('mousedown', this.generateElement.bind(this));
@@ -34,9 +31,13 @@ class GenerateHTML {
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  html, body {
+  padding: 0;
+  margin:0;
+  }
+  </style>
 
 </head>
 <body>
@@ -73,6 +74,5 @@ ${document.getElementById('live-display').innerHTML}
 
     document.body.removeChild(element);
   }
-
 
 }

@@ -14,8 +14,6 @@ class Button extends HTML {
     this.hoverColor = undefined;
   }
 
-
-
   init() {
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
@@ -24,9 +22,7 @@ class Button extends HTML {
 
     document.getElementById(this.parentId).appendChild(this.buttonEl);
 
-
     console.log('Button child Appended')
-
 
     // this.buttonEl.addEventListener('dragover', this.dragOver.bind(this));
     this.buttonEl.addEventListener('dragenter', this.dragEnter);
@@ -42,7 +38,7 @@ class Button extends HTML {
     console.log('ButtonClass: Create new Buttonel');
     var returnObject = document.createElement('a');
     returnObject.id = this.id;
-    returnObject.innerHTML='Button';
+    returnObject.innerHTML = 'Button';
     returnObject.style.backgroundColor = '#44c767';
 
     returnObject.style.borderRadius = '28px';
