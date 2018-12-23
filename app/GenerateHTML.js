@@ -19,6 +19,13 @@ class GenerateHTML {
   }
 
   generateElement() {
+    // Create the event
+    var hideEvent = new CustomEvent("hide-d-r-d", {
+      "detail": "Hide Drag Resize Delete "
+    });
+
+    document.dispatchEvent(hideEvent);
+
     console.log(this.downloadBtnEl);
     console.log(document.getElementById('live-display').innerHTML)
 
@@ -45,6 +52,13 @@ ${document.getElementById('live-display').innerHTML}
 
 `;
     this.download('index.html', htmlContent);
+
+    var showEvent = new CustomEvent("show-d-r-d", {
+      "detail": "Show Drag Resize Delete "
+    });
+
+    document.dispatchEvent(showEvent);
+
   }
 
   download(filename, text) {

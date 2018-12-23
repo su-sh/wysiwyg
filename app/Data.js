@@ -21,6 +21,29 @@ class Data {
     this.prevMouseClickElId = undefined;
 
     /*=====  End of mouseClicked  ======*/
+
+
+
+
+  }
+
+
+  static removeOutlines() {
+    document.getElementById(this.currentMouseOverElId).style.outlineStyle = "";
+    console.log('outout');
+
+    document.getElementById(this.currentMouseClickElId).style.outline = '';
+    console.log('outout');
+
+    console.log('outoutout')
+    document.getElementById(this.currentMouseClickElId).style.zIndex = "";
+
+  };
+
+  static showOutlines() {
+
+    this.setCurrentMouseOverElId(this.currentMouseOverElId);
+    this.setCurrentMouseClickElId(this.currentMouseClickElId);
   }
 
   static getCurrentMenuDrag() {
@@ -82,9 +105,9 @@ class Data {
         "dashed";
 
 
-      document.getElementById(this.currentMouseOverElId).style.opacity = '.8';
+      // document.getElementById(this.currentMouseOverElId).style.opacity = '.8';
       // child node
-      let child = document.getElementById(this.currentMouseOverElId).childNodes;
+      // let child = document.getElementById(this.currentMouseOverElId).childNodes;
 
 
 

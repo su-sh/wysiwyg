@@ -16,20 +16,17 @@ class Section extends HTML {
   }
 
   init() {
-    super.setHtmlParentId(this.parentId);
-    super.setHtmlId(this.id);
+
 
     this.sectionEl = this.createNewElement(this.sectionType);
-
     document.getElementById(this.parentId).appendChild(this.sectionEl);
 
+    super.setHtmlParentId(this.parentId);
+    super.setHtmlId(this.id);
+    super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
-    if (document.getElementById(this.parentId).style.position === 'absolute') {
-      console.log('ho', document.getElementById(this.parentId).style.position);
-    }
 
 
-    console.log('ho', document.getElementById(this.parentId).style.position);
     console.log('child Appended')
 
 
@@ -38,19 +35,10 @@ class Section extends HTML {
     this.sectionEl.addEventListener('dragleave', this.dragLeave);
     this.sectionEl.addEventListener('drop', this.dragDrop);
 
-    const resize = new Resizer(this.sectionEl);
-    const dragger = new Dragger(this.sectionEl);
-    const deleter = new Deleter(document.getElementById(this.parentId), this.sectionEl)
+    // const resize = new Resizer(this.sectionEl);
+    // const dragger = new Dragger(this.sectionEl);
+    // const deleter = new Deleter(document.getElementById(this.parentId), this.sectionEl)
 
-
-
-    /**
-     *
-     * Test
-     *
-     */
-
-    // this.test();
 
   }
 
@@ -104,12 +92,13 @@ class Section extends HTML {
     returnObject.style.maxHeight = '100%';
     returnObject.style.minHeight = '100px';
     returnObject.style.overflow = 'hidden';
+    returnObject.style.backgroundColor = 'white';
 
 
     //test
-    var colorArray = ['aqua', 'green', 'blue', 'black', 'yellow', 'pink', 'white'];
-    returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
-    returnObject.style.backgroundColor = '';
+    // var colorArray = ['aqua', 'green', 'blue', 'black', 'yellow', 'pink', 'white'];
+    // returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
+    // // returnObject.style.backgroundColor = '';
     returnObject.style.position = 'relative';
     return returnObject;
   }

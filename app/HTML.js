@@ -9,15 +9,59 @@ class HTML {
     this.style = [];
 
 
-
-
+    this.downloadHtmlEl = undefined;
+    this.resizer;
+    this.dragger;
+    this.deleter;
     this.positionX = undefined;
     this.positionY = undefined;
+
+    // this.listenForDownload();
+    document.addEventListener('hide-d-r-d', this.removeDragRresizeDelete.bind(this));
+    document.addEventListener('show-d-r-d', this.showDragRresizeDelete.bind(this));
+
   }
+
+
+  removeDragRresizeDelete(e) {
+    console.log('custom event')
+    console.log(e.detail);
+    this.dragger.removeDragger();
+    this.deleter.removeDeleter();
+    this.resizer.removeResizer();
+    Data.removeOutlines();
+  }
+
+  showDragRresizeDelete() {
+    this.dragger.init();
+    this.deleter.init();
+    this.resizer.init();
+  }
+
+
+
 
   setHtmlId(id) {
     this.id = id;
   }
+
+  setDraggerResizerDeleter() {
+    console.log('fromHTML', this.parentId, this.id);
+    // document.getElementById(this.id)
+    console.log('HTML Is', document.getElementById(this.id));
+
+    this.resizer = new Resizer(document.getElementById(this.id));
+    this.dragger = new Dragger(document.getElementById(this.id));
+    this.deleter = new Deleter(document.getElementById(this.parentId), document.getElementById(this.id));
+
+  }
+
+
+  removeDragResizeDeleter() {
+
+  }
+
+
   getHtmlId() {
     return this.id;
   }

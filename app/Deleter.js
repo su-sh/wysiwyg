@@ -28,6 +28,13 @@ class Deleter {
     this.deleterEl.addEventListener('mousedown', this.initDelete.bind(this), false);
   }
 
+  removeDeleter() {
+    this.parentEl.removeChild(this.deleterEl);
+  }
+
+
+
+
   initDelete(e) {
     e.stopPropagation();
 

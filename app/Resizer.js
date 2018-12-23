@@ -5,8 +5,10 @@ class Resizer {
     this.parentEl = parentEl;
     this.resizerElement = undefined;
     this.eventHandler = undefined;
+    console.log('resizer', parent);
+
     this.init();
-    console.log('resizer');
+
   }
 
 
@@ -29,9 +31,11 @@ class Resizer {
     this.resizerElement.addEventListener('mousedown', this.initResize.bind(this), false);
   }
 
-  events() {
-
+  removeResizer() {
+    this.parentEl.removeChild(this.resizerElement);
   }
+
+
   initResize(e) {
     console.log('initResize');
     this.eventHandler = this.Resize.bind(this);

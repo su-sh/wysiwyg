@@ -17,8 +17,6 @@ class Text extends HTML {
 
 
   init() {
-    super.setHtmlParentId(this.parentId);
-    super.setHtmlId(this.id);
 
     this.textEl = this.createNewElement();
 
@@ -31,6 +29,13 @@ class Text extends HTML {
     document.getElementById(this.parentId).appendChild(this.textEl);
 
 
+    // HTML
+    super.setHtmlParentId(this.parentId);
+    super.setHtmlId(this.id);
+    console.log('TextId', this.id)
+    super.setDraggerResizerDeleter();
+    super.addClickHoverEvents();
+
     console.log('Text child Appended')
     this.textEl.addEventListener('mousedown', this.mouseClick.bind(this));
 
@@ -39,8 +44,8 @@ class Text extends HTML {
     // this.textEl.addEventListener('dragleave', this.dragLeave);
     // this.textEl.addEventListener('drop', this.dragDrop);
 
-    const resize = new Resizer(this.textEl);
-    const dragger = new Dragger(this.textEl);
+    // const resize = new Resizer(this.textEl);
+    // const dragger = new Dragger(this.textEl);
 
   }
 

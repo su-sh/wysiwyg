@@ -4,6 +4,7 @@ class Dragger {
     this.draggerElement = undefined;
     this.dragEventHandeler = undefined;
     this.init();
+
   }
 
 
@@ -24,6 +25,10 @@ class Dragger {
 
   }
 
+  removeDragger() {
+    this.parentEl.removeChild(this.draggerElement);
+  }
+
   initDrag() {
     console.log('initResize');
     this.eventHandler = this.drag.bind(this);
@@ -36,7 +41,11 @@ class Dragger {
 
     this.draggerElement.style.cursor = 'grabbing';
     this.parentEl.style.position = 'absolute';
-    this.parentEl.style.top = e.clientY + 'px';
+
+    this.parentEl.style.top = e.clientY;
+
+    // this.parentEl.style.top = e.clientY + 'px';
+
 
 
     let currentx = this.parentEl.style.width;

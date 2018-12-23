@@ -76,6 +76,7 @@ class EditTextMenu {
     this.fontSizeMenuInputEl.addEventListener('change', this.changeTextSize.bind(this));
 
     this.fontColorMenuEl.addEventListener('mousedown', this.hideShow.bind(this));
+    // this.fontColorMenuEl.addEventListener('dblclick', this.inheritColor.bind(this));
     this.fontColorCanvasEl.addEventListener(
       "mousedown",
       this.setRGB.bind(this)
@@ -83,6 +84,7 @@ class EditTextMenu {
 
 
   }
+
 
   hideShow() {
     if (this.fontColorCanvasEl.style.display == "none") {

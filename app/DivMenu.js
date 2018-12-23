@@ -7,6 +7,9 @@ img.src = "./app/asset/Untitled.png";
 class DivMenu {
   constructor() {
 
+    this.flexRowEl = undefined;
+    this.flexColumnEl = undefined;
+    this.flexClearEl = undefined;
 
     this.widthExpandEl = undefined;
     this.widthShrinkEl = undefined;
@@ -14,6 +17,7 @@ class DivMenu {
     this.colorPickerCanvasEl = undefined;
     this.csvContext = undefined;
     this.imageObj = undefined;
+
     this.init();
     this.event();
   }
@@ -26,6 +30,11 @@ class DivMenu {
 
 
 
+    this.flexRowEl = document.getElementById("flex-row");
+    this.flexColumnEl = document.getElementById("flex-column");
+    this.flexClearEl = document.getElementById("flex-clear");
+
+
     this.colorPickerEl = document.getElementById("div-color-picker");
     this.colorPickerCanvasEl = document.getElementById("div-cp-cvs");
 
@@ -35,7 +44,6 @@ class DivMenu {
     this.imageObj = img;
 
     console.log(this.colorPickerEl);
-    this.colorPickerEl.addEventListener("mousedown", this.hideShow.bind(this));
 
     window.addEventListener("load", this.loadImages.bind(this));
   }
@@ -69,7 +77,48 @@ class DivMenu {
     var ret = "rgb(" + r + "," + g + "," + b + ")";
     console.log(ret);
   }
+
+  addFlexRow() {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      console.log('row')
+
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'row';
+
+    }
+
+  }
+  addFlexColumn() {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      console.log('column')
+
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'column';
+
+    }
+  }
+
+  clearFlex() {
+    console.log('clearflex')
+
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = '';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = '';
+
+    }
+  }
   event() {
+
+
+    this.flexRowEl.addEventListener('mousedown', this.addFlexRow.bind(this));
+    this.flexColumnEl.addEventListener('mousedown', this.addFlexColumn.bind(this))
+    this.flexClearEl.addEventListener('mousedown', this.clearFlex.bind(this));
+
+    this.colorPickerEl.addEventListener("mousedown", this.hideShow.bind(this));
+    this.colorPickerEl.addEventListener("dblclick", this.inheritColor.bind(this));
+
+
     this.colorPickerCanvasEl.addEventListener(
       "mousedown",
       this.setRGB.bind(this)
@@ -77,8 +126,16 @@ class DivMenu {
 
     this.widthExpandEl.addEventListener('mousedown', this.expandDiv.bind(this));
     this.widthShrinkEl.addEventListener('mousedown', this.shrinkDiv.bind(this));
+  }
 
 
+  inheritColor() {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+
+      document.getElementById(Data.getCurrentMouseClickElId()).style.color = '';
+
+      // document.getElementById(Data.getCurrentMouseClickElId()).style.backgroundColor = rgb;
+    }
 
   }
 
