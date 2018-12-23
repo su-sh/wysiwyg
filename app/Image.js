@@ -52,14 +52,6 @@ class ImageDiv extends HTML {
     super.addClickHoverEvents();
 
 
-    // this.imageEl.addEventListener('dragover', this.dragOver.bind(this));
-    // this.imageEl.addEventListener('dragenter', this.dragEnter);
-    // this.imageEl.addEventListener('dragleave', this.dragLeave);
-    // this.imageEl.addEventListener('drop', this.dragDrop);
-
-    // const resize = new Resizer(this.imageEl);
-    // const dragger = new Dragger(this.imageEl);
-
   }
 
   generateNewImageElement() {

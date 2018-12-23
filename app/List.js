@@ -14,20 +14,18 @@ class List extends HTML {
   }
 
   init() {
-    super.setHtmlParentId(this.parentId);
-    super.setHtmlId(this.id);
 
     this.listEl = this.createNewElement();
 
     console.log("list", this.listEl);
     document.getElementById(this.parentId).appendChild(this.listEl);
 
+
+    super.setHtmlParentId(this.parentId);
+    super.setHtmlId(this.id);
+    super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
 
-    console.log("sushant");
-
-    const resize = new Resizer(this.listEl);
-    const dragger = new Dragger(this.listEl);
   }
 
   createNewElement() {
