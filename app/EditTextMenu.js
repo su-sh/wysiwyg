@@ -1,5 +1,8 @@
 console.log('EditText.js');
 
+let img1 = new Image();
+img1.src = "./app/asset/Untitled.png";
+
 class EditTextMenu {
   constructor() {
 
@@ -14,6 +17,10 @@ class EditTextMenu {
     this.underlineTextEl = undefined;
 
     this.fontFamilyMenuSelect = undefined;
+
+    this.fontColorMenuEl = undefined;
+    this.fontColorCanvasEl = undefined;
+    this.fontColorCanvasContext = undefined;
 
 
     this.init();
@@ -35,6 +42,19 @@ class EditTextMenu {
     this.fontFamilyMenuSelect = document.getElementById('text-font-select');
     this.fontSizeMenuInputEl = document.getElementById('text-size-select');
 
+
+    this.fontColorMenuEl = document.getElementById('color-text');
+    this.fontColorCanvasEl = document.getElementById('txt-cp-cvs');
+    this.fontColorCanvasContext = this.fontColorCanvasEl.getContext("2d");
+
+    window.addEventListener("load", this.loadImage.bind(this));
+
+
+  }
+
+  loadImage() {
+    this.fontColorCanvasContext.drawImage(img1, 0, 0);
+
   }
 
 
@@ -54,8 +74,50 @@ class EditTextMenu {
 
     this.fontFamilyMenuSelect.addEventListener('change', this.changeFontText.bind(this));
     this.fontSizeMenuInputEl.addEventListener('change', this.changeTextSize.bind(this));
+
+    this.fontColorMenuEl.addEventListener('mousedown', this.hideShow.bind(this));
+    this.fontColorCanvasEl.addEventListener(
+      "mousedown",
+      this.setRGB.bind(this)
+    );
+
+
   }
 
+  hideShow() {
+    if (this.fontColorCanvasEl.style.display == "none") {
+      this.fontColorCanvasEl.style.display = "";
+    } else {
+      this.fontColorCanvasEl.style.display = "none";
+    }
+  }
+  setRGB(e) {
+    var offsetLeft = document.getElementById("txt-cp-cvs").offsetLeft;
+    var offsetTop = document.getElementById("txt-cp-cvs").offsetTop;
+
+    var x = e.pageX - offsetLeft;
+    var y = e.pageY - offsetTop;
+
+    x = e.clientX - this.fontColorCanvasEl.getBoundingClientRect().left;
+    y = e.clientY - this.fontColorCanvasEl.getBoundingClientRect().top;
+    console.log(x, y);
+
+    var canvasColor = this.fontColorCanvasContext.getImageData(x, y, 1, 1).data; // rgba e [0,255]
+    var r = canvasColor[0];
+    var g = canvasColor[1];
+    var b = canvasColor[2];
+
+    let rgb = "rgb(" + r + "," + g + "," + b + ")";
+    console.log(rgb);
+    // color.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
+      console.log('changeColorDiv', rgb);
+      document.getElementById(Data.getCurrentMouseClickElId()).style.color = rgb;
+
+      // document.getElementById(Data.getCurrentMouseClickElId()).style.backgroundColor = rgb;
+    }
+  }
 
   changeFontText() {
     this.setFont(this.fontFamilyMenuSelect.value);

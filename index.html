@@ -125,10 +125,19 @@
             </div>
 
 
-            <div id="color-text" class="left font-weight-menu">
-              <i class="material-icons">
-                colorize
-              </i>
+            <div class="left font-weight-menu">
+              <div id="color-text">
+                <i class="material-icons">
+                  colorize
+                </i>
+              </div>
+
+              <div class="canvas" style="position:relative">
+                <canvas id="txt-cp-cvs" style="position: absolute; display: none">
+
+                </canvas>
+              </div>
+
             </div>
           </div>
 
@@ -178,18 +187,17 @@
 
 
         <div class="color-menu left" style="position: relative;">
-          <div class="div-color-picker">
+          <div class="div-color-picker" id="div-color-picker">
             <i class="material-icons">
               color_lens
             </i>
-            <canvas id="div-cp-cvs" style="position: absolute">
 
-            </canvas>
           </div>
 
           <div class="canvas" style="position:relative">
+            <canvas id="div-cp-cvs" style="position: absolute; display: none">
 
-
+            </canvas>
           </div>
         </div>
 
@@ -285,7 +293,7 @@
 
   <script src="./app/EditTextMenu.js"></script>
   <script src="./app/NavBarEditMenu.js"></script>
-  <script src="./app/ColorDivMenu.js"></script>
+  <script src="./app/DivMenu.js"></script>
   <script src="./app/UploadImageMenu.js"></script>
 
 
