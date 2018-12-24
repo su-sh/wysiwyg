@@ -13,6 +13,8 @@ class NavBar extends HTML {
     this.init();
   }
 
+
+
   init() {
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
@@ -25,38 +27,29 @@ class NavBar extends HTML {
     document.querySelector(`#${this.id} ul`).style.listStyleType = 'none';
     document.querySelector(`#${this.id} ul`).style.margin = '0';
     document.querySelector(`#${this.id} ul`).style.padding = '0';
-
     document.querySelector(`#${this.id} ul`).style.overflow = 'hidden';
     document.querySelector(`#${this.id} ul`).style.backgroundColor = 'black';
 
 
     let nodes = document.querySelector(`#${this.id} ul`).childNodes;
-    console.log('nodes', nodes)
+    console.log('nodes', nodes);
     for (let i = 0; i < nodes.length; i++) {
       nodes[i].style.float = 'left';
-
       // li a
       nodes[i].childNodes[0].style.display = 'block';
       nodes[i].childNodes[0].style.color = 'white';
       nodes[i].childNodes[0].style.textAlign = 'center';
       nodes[i].childNodes[0].style.padding = '14px 16px';
-
       nodes[i].childNodes[0].style.textDecoration = 'none';
-
     }
 
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
     super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
-    // super.addClickHoverEvents();
 
-    if (document.getElementById(this.parentId).style.position === 'absolute') {
-      console.log('navMenu', 'Should Apend as relative', document.getElementById(this.parentId).style.position);
-    }
 
     console.log('child appended', document.getElementById(this.parentId).style.position);
-
 
   }
 
@@ -65,11 +58,9 @@ class NavBar extends HTML {
     let returnElement;
     switch (navType) {
       case 1:
-        console.log('type one');
         break;
 
       default:
-        console.log('default ', this.id);
         returnElement = this.generateNewNavBar();
         break;
     }
@@ -92,8 +83,6 @@ class NavBar extends HTML {
     ulEl.appendChild(this.addLi('About'));
 
     returnObject.appendChild(ulEl);
-
-    console.log('retObj', returnObject)
 
     return returnObject;
   }

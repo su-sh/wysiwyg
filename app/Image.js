@@ -9,12 +9,9 @@ class ImageDiv extends HTML {
     this.imageEl = undefined;
     this.resizer = undefined;
     this.id = 'img_' + Utils.generateRandomId();
-    // this.sectionType = sectionType;
-    var that = this;
 
     this.init();
-    // document.addEventListener('hide-d-r-d', this.removeDragRresizeDelete.bind(this));
-    // document.addEventListener('show-d-r-d', this.showDragRresizeDelete.bind(this));
+
   }
 
 
@@ -34,15 +31,11 @@ class ImageDiv extends HTML {
   // }
 
 
+  // creates&appends child then update parent
   init() {
-    super.setHtmlParentId(this.parentId);
-    super.setHtmlId(this.id);
 
     this.imageEl = this.generateNewImageElement();
-
     document.getElementById(this.parentId).appendChild(this.imageEl);
-
-
     console.log('child Appended');
 
     super.setHtmlParentId(this.parentId);
@@ -50,20 +43,18 @@ class ImageDiv extends HTML {
 
     super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
-
-
   }
 
   generateNewImageElement() {
 
-    var returnObject = document.createElement('div');
+    let returnObject = document.createElement('div');
     returnObject.id = this.id;
     returnObject.style.position = 'relative';
     returnObject.style.width = '100px';
     returnObject.style.height = 'auto';
 
 
-    var imageElement = document.createElement('img');
+    let imageElement = document.createElement('img');
     returnObject.appendChild(imageElement);
     imageElement.style.width = 'inherit';
     imageElement.style.height = 'inherit';
@@ -72,16 +63,12 @@ class ImageDiv extends HTML {
 
     imageElement.addEventListener('mousedown', this.clickEvent.bind(this));
 
-
-
     return returnObject;
   }
 
 
   clickEvent(e) {
-    // console.log('parentId', this.imageEl.id)
     e.stopPropagation();
-
     Data.setCurrentMouseClickElId(this.imageEl.id);
   }
 }

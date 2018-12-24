@@ -8,11 +8,11 @@ class Main {
     this.init();
   }
 
-  init() {
 
+  // Setup DragDrop and Bottom
+  init() {
     this.liveDisplayEl = document.getElementById('live-display');
     var menu = new Menu(this.liveDisplayEl);
-
     this.setLiveDisplay();
   }
 
@@ -40,19 +40,16 @@ class Main {
 
   liveDragEnter(e) {
     Data.setcurrentDragOverDivId(that.liveDisplayEl.id);
-    console.log('dragEnter',Data.getcurrentDragOverDivId());
+    console.log('dragEnter', Data.getcurrentDragOverDivId());
     e.preventDefault();
   }
 
   liveDragLeave() {
     console.log('dragLeave');
-    if(Data.getcurrentDragOverDivId()===that.liveDisplayEl.id){
+    if (Data.getcurrentDragOverDivId() === that.liveDisplayEl.id) {
       console.log('true')
     }
 
   }
-
-
-
 
 }

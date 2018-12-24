@@ -11,15 +11,14 @@ class Section extends HTML {
     this.sectionType = sectionType;
 
     this.init();
-
-
   }
+
 
   init() {
 
-
     this.sectionEl = this.createNewElement(this.sectionType);
     document.getElementById(this.parentId).appendChild(this.sectionEl);
+    console.log('Child Appended');
 
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
@@ -27,40 +26,16 @@ class Section extends HTML {
     super.addClickHoverEvents();
 
 
-    console.log('child Appended')
-
-
     this.sectionEl.addEventListener('dragover', this.dragOver.bind(this));
-    this.sectionEl.addEventListener('dragenter', this.dragEnter);
-    this.sectionEl.addEventListener('dragleave', this.dragLeave);
-    this.sectionEl.addEventListener('drop', this.dragDrop);
-
-    // const resize = new Resizer(this.sectionEl);
-    // const dragger = new Dragger(this.sectionEl);
-    // const deleter = new Deleter(document.getElementById(this.parentId), this.sectionEl)
-
-
   }
 
 
-  test() {
-    this.sectionEl.addEventListener('mouseover', this.testFunc.bind(this));
-  }
-
-
-  testFunc(e) {
-    e.stopPropagation();
-    Data.setCurrentMouseOver(this.sectionEl.id);
-  }
-
-
+  // sets current id as dragover id
   dragOver(e) {
-
     e.stopPropagation();
     Data.setcurrentDragOverDivId(super.getHtmlId());
     console.log('DragOverSection: ', Data.getcurrentDragOverDivId())
     console.log('this is this', this.sectionEl.id);
-
   }
 
 
@@ -80,8 +55,7 @@ class Section extends HTML {
     return returnElement;
   }
 
-
-
+  // generates new section
   generateNewDefaultSection() {
     console.log('func generateNewSection');
     var returnObject = document.createElement('div');
@@ -94,7 +68,6 @@ class Section extends HTML {
     returnObject.style.overflow = 'hidden';
     returnObject.style.backgroundColor = 'white';
 
-
     //test
     // var colorArray = ['aqua', 'green', 'blue', 'black', 'yellow', 'pink', 'white'];
     // returnObject.style.backgroundColor = colorArray[Math.floor((Math.random() * 2) + 0)];
@@ -102,10 +75,5 @@ class Section extends HTML {
     returnObject.style.position = 'relative';
     return returnObject;
   }
-
-
-
-
-
 
 }

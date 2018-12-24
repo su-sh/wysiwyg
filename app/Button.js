@@ -4,7 +4,6 @@ class Button extends HTML {
   constructor(parentId) {
     super();
     this.parentId = parentId;
-    console.log('parent id ', this.parentId)
     this.buttonEl = undefined;
     this.resizer = undefined;
     this.id = 'btn_' + Utils.generateRandomId();
@@ -14,14 +13,11 @@ class Button extends HTML {
     this.hoverColor = undefined;
   }
 
+
   init() {
-    super.setHtmlParentId(this.parentId);
-    super.setHtmlId(this.id);
 
     this.buttonEl = this.createDefaultButtonElement();
-
     document.getElementById(this.parentId).appendChild(this.buttonEl);
-
     console.log('Button child Appended')
 
     super.setHtmlParentId(this.parentId);

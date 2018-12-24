@@ -14,12 +14,9 @@ class List extends HTML {
   }
 
   init() {
-
     this.listEl = this.createNewElement();
-
-    console.log("list", this.listEl);
     document.getElementById(this.parentId).appendChild(this.listEl);
-
+    console.log("Clild Appended", this.listEl);
 
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
@@ -80,7 +77,6 @@ class List extends HTML {
           this.listEl.firstElementChild.lastChild
         );
       }
-
       console.log(this.listEl.firstElementChild.childNodes.length);
     }
   }

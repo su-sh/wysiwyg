@@ -9,6 +9,8 @@ class MenuElement {
     this.eventListener();
   }
 
+
+  // on drag start gets element type and then creates new element on drag end
   eventListener() {
     console.log("before id:", this.id);
     document
@@ -23,22 +25,15 @@ class MenuElement {
     console.log("hello ", this.id);
   }
 
+
+  // creates new Element
   createNewElement() {
     console.log("createNewEl ", this.id);
-    // console.log('DOas',document.getElementById(Data.getCurrentDragOver()).tagName.toLowerCase());
 
-    if (document.getElementById(Data.getcurrentDragOverDivId()) === "div") {
-      console.log(
-        "DO ",
-        document.getElementById(Data.getcurrentDragOverDivId())
-      );
-      console.log(document.getElementById(Data.getcurrentDragOverDivId()));
-    }
     switch (this.id) {
       case "create-section":
         console.log("test ", Data.getcurrentDragOverDivId());
         var section = new Section(Data.getcurrentDragOverDivId());
-
         break;
 
       case "create-text":
