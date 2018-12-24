@@ -17,7 +17,7 @@ class Resizer {
     this.resizerElement.className = 'resizer';
     this.resizerElement.style.width = '10px';
     this.resizerElement.style.height = '10px';
-    this.resizerElement.style.background = 'red';
+    this.resizerElement.style.background = 'green';
     this.resizerElement.style.position = 'absolute';
     this.resizerElement.style.right = 0;
     this.resizerElement.style.bottom = 0;
