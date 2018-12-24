@@ -65,7 +65,7 @@ class Section extends HTML {
     returnObject.style.maxWidth = '100%';
     returnObject.style.maxHeight = '100%';
     returnObject.style.minHeight = '100px';
-    returnObject.style.overflow = 'hidden';
+    returnObject.style.overflowX = 'hidden';
     returnObject.style.backgroundColor = 'white';
 
     //test

@@ -67,7 +67,7 @@ class Text extends HTML {
 
     returnObject.id = this.id;
     returnObject.style.width = '80%';
-    returnObject.style.minHeight = '50px';
+    // returnObject.style.minHeight = '50px';
 
     returnObject.style.position = 'relative';
 

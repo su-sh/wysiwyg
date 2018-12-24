@@ -15,11 +15,16 @@ class Deleter {
     this.deleterEl.className = 'resizer';
     this.deleterEl.style.width = '10px';
     this.deleterEl.style.height = '10px';
-    this.deleterEl.style.background = 'red';
     this.deleterEl.style.position = 'absolute';
     this.deleterEl.style.right = 0;
     this.deleterEl.style.top = 0;
-    this.deleterEl.style.cursor = 'se-resize';
+    let url = './app/asset/close.png';
+    // this.deleterEl.style.backgroundImage = `url('${url}')`;
+    this.deleterEl.style.background = 'red';
+
+    this.deleterEl.style.backgroundImage = 'url(' + './app/asset/close.png' + ')';
+    this.deleterEl.title = 'delete Element';
+    // this.deleterEl.style.cursor = 'p';
     this.deleterEl.contentEditable = false;
 
     this.parentEl.appendChild(this.deleterEl);

@@ -98,7 +98,7 @@ class DivMenu {
     console.log('clearflex')
 
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
-
+      console.log('clear Flex')
       document.getElementById(Data.getCurrentMouseClickElId()).style.display = '';
       document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = '';
 

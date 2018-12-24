@@ -115,9 +115,6 @@ class UploadImageMenu {
   }
 
 
-  readImg(e) {
-
-  }
   /*
   readImg(evt) {
     // console.log(this.addImgInputEl.files[0], e.target)

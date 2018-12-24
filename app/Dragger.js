@@ -48,12 +48,10 @@ class Dragger {
     console.log(currentx)
     this.parentEl.style.left = (e.clientX + 'px');
   }
+
   stopDrag(e) {
-
     this.draggerElement.style.cursor = 'grab';
-
     window.removeEventListener('mousemove', this.eventHandler, false);
-
   }
 
 }
