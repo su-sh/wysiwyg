@@ -44,8 +44,8 @@ class Resizer {
   }
   Resize(e) {
     console.log('Resize')
-    this.parentEl.style.width = (e.clientX - this.parentEl.offsetLeft) + 'px';
-    this.parentEl.style.height = (e.clientY - this.parentEl.offsetTop) + 'px';
+    this.parentEl.style.width = (e.pageX - this.parentEl.offsetLeft) + 'px';
+    this.parentEl.style.height = (e.pageY - this.parentEl.offsetTop) + 'px';
   }
   stopResize(e) {
     console.log('mouseup');
