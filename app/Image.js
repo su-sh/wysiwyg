@@ -44,7 +44,8 @@ class ImageDiv extends HTML {
     imageElement.style.width = 'inherit';
     imageElement.style.height = 'inherit';
     imageElement.style.objectFit = 'fill';
-    imageElement.src = './app/asset/imgPlaceholder.png';
+    // imageElement.src = './app/asset/imgPlaceholder.png';
+    imageElement.src = 'https://raw.githubusercontent.com/su-sh/wysiwyg/master/app/asset/imgPlaceholder.png';
 
     imageElement.addEventListener('mousedown', this.clickEvent.bind(this));
 
