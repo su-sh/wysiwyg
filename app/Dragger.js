@@ -33,7 +33,10 @@ class Dragger {
   drag(e) {
     this.draggerElement.style.cursor = 'grabbing';
     this.parentEl.style.position = 'absolute';
-    this.parentEl.style.top = e.clientY;
+    
+    var headerEl = document.getElementsByClassName('header')[0];
+
+    this.parentEl.style.top = e.clientY - headerEl.clientHeight;
 
     // this.parentEl.style.top = e.clientY + 'px';
     let currentx = this.parentEl.style.width;

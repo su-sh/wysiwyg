@@ -44,8 +44,10 @@ class Resizer {
 
   resize(e) {
     console.log('Resize')
+    var headerEl = document.getElementsByClassName('header')[0];
+
     this.parentEl.style.width = (e.pageX - this.parentEl.offsetLeft) + 'px';
-    this.parentEl.style.height = (e.pageY - this.parentEl.offsetTop) + 'px';
+    this.parentEl.style.height = (e.pageY - this.parentEl.offsetTop - headerEl.clientHeight) + 'px';
   }
 
 
