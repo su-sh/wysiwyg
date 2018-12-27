@@ -4,11 +4,9 @@ class Dragger {
     this.draggerElement = undefined;
     this.dragEventHandeler = undefined;
     this.init();
-
   }
 
   init() {
-
     this.draggerElement = document.createElement('div');
     this.draggerElement.className = 'resizer';
     this.draggerElement.style.width = '10px';
@@ -24,9 +22,6 @@ class Dragger {
 
   }
 
-  removeDragger() {
-    this.parentEl.removeChild(this.draggerElement);
-  }
 
   initDrag() {
     console.log('initResize');
@@ -36,14 +31,11 @@ class Dragger {
   }
 
   drag(e) {
-
     this.draggerElement.style.cursor = 'grabbing';
     this.parentEl.style.position = 'absolute';
-
     this.parentEl.style.top = e.clientY;
 
     // this.parentEl.style.top = e.clientY + 'px';
-
     let currentx = this.parentEl.style.width;
     console.log(currentx)
     this.parentEl.style.left = (e.clientX + 'px');
@@ -54,4 +46,7 @@ class Dragger {
     window.removeEventListener('mousemove', this.eventHandler, false);
   }
 
+  removeDragger() {
+    this.parentEl.removeChild(this.draggerElement);
+  }
 }

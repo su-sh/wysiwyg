@@ -23,7 +23,6 @@ class DivMenu {
   }
 
   init() {
-
     this.widthExpandEl = document.getElementById("div-expand-width");
     this.widthShrinkEl = document.getElementById("div-shrink-width");
 
@@ -44,68 +43,8 @@ class DivMenu {
     window.addEventListener("load", this.loadImages.bind(this));
   }
 
-  hideShow() {
-    console.log("mouseDown");
-    if (this.colorPickerCanvasEl.style.display == "none") {
-      this.colorPickerCanvasEl.style.display = "";
-    } else {
-      this.colorPickerCanvasEl.style.display = "none";
-    }
-  }
-  loadImages() {
-    console.log(this.imageObj.width, this.imageObj.height);
-    this.csvContext.drawImage(this.imageObj, 0, 0);
 
-    // this.colorPickerCanvasEl.addEventListener('click', this.getRgb.bind(this))
-  }
-
-  getRgb(e) {
-    var x = e.x;
-    var y = e.y;
-    // console.log
-
-    // set color now
-    var canvasColor = this.csvContext.getImageData(x, y, 100, 100).data; // rgba e [0,255]
-    var r = canvasColor[0];
-    var g = canvasColor[1];
-    var b = canvasColor[2];
-
-    var ret = "rgb(" + r + "," + g + "," + b + ")";
-    console.log(ret);
-  }
-
-  addFlexRow() {
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
-      console.log('row')
-
-      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
-      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'row';
-
-    }
-
-  }
-  addFlexColumn() {
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
-      console.log('column')
-
-      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
-      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'column';
-
-    }
-  }
-
-  clearFlex() {
-    console.log('clearflex')
-
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
-      console.log('clear Flex')
-      document.getElementById(Data.getCurrentMouseClickElId()).style.display = '';
-      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = '';
-
-    }
-  }
   event() {
-
     this.flexRowEl.addEventListener('mousedown', this.addFlexRow.bind(this));
     this.flexColumnEl.addEventListener('mousedown', this.addFlexColumn.bind(this))
     this.flexClearEl.addEventListener('mousedown', this.clearFlex.bind(this));
@@ -122,21 +61,98 @@ class DivMenu {
     this.widthShrinkEl.addEventListener('mousedown', this.shrinkDiv.bind(this));
   }
 
-  inheritColor() {
+
+
+
+  hideShow() {
+    console.log("mouseDown");
+    if (this.colorPickerCanvasEl.style.display == "none") {
+      this.colorPickerCanvasEl.style.display = "";
+    } else {
+      this.colorPickerCanvasEl.style.display = "none";
+    }
+  }
+
+
+  loadImages() {
+    console.log(this.imageObj.width, this.imageObj.height);
+    this.csvContext.drawImage(this.imageObj, 0, 0);
+
+    // this.colorPickerCanvasEl.addEventListener('click', this.getRgb.bind(this))
+  }
+
+
+
+  getRgb(e) {
+    var x = e.x;
+    var y = e.y;
+    // console.log
+
+    // set color now
+    var canvasColor = this.csvContext.getImageData(x, y, 100, 100).data; // rgba e [0,255]
+    var r = canvasColor[0];
+    var g = canvasColor[1];
+    var b = canvasColor[2];
+
+    var ret = "rgb(" + r + "," + g + "," + b + ")";
+    console.log(ret);
+  }
+
+
+
+  addFlexRow() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      console.log('row')
 
-      document.getElementById(Data.getCurrentMouseClickElId()).style.color = '';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'row';
 
-      // document.getElementById(Data.getCurrentMouseClickElId()).style.backgroundColor = rgb;
     }
 
   }
+
+
+  addFlexColumn() {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      console.log('column')
+
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = 'flex';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = 'column';
+
+    }
+  }
+
+
+  clearFlex() {
+    console.log('clearflex')
+
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      console.log('clear Flex')
+      document.getElementById(Data.getCurrentMouseClickElId()).style.display = '';
+      document.getElementById(Data.getCurrentMouseClickElId()).style.flexWrap = '';
+
+    }
+  }
+
+
+
+
+  inheritColor() {
+    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
+      document.getElementById(Data.getCurrentMouseClickElId()).style.color = '';
+      // document.getElementById(Data.getCurrentMouseClickElId()).style.backgroundColor = rgb;
+    }
+  }
+
 
   expandDiv() {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt' || Utils.getIdType(Data.getCurrentMouseClickElId()) === 'img') {
       document.getElementById(Data.getCurrentMouseClickElId()).style.width = '100%';
     }
   }
+
+
+
   shrinkDiv() {
     // console.log(document.getElementById(Data.getCurrentMouseClickElId()).style.width)
 
@@ -145,9 +161,7 @@ class DivMenu {
       document.getElementById(Data.getCurrentMouseClickElId()).style.width = '50%';
     }
   }
-  setDivColor() {
 
-  }
 
   setRGB(e) {
     var offsetLeft = document.getElementById("div-cp-cvs").offsetLeft;
@@ -170,7 +184,6 @@ class DivMenu {
     // color.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'div') {
-
       console.log('changeColorDiv', rgb);
       document.getElementById(Data.getCurrentMouseClickElId()).style.backgroundColor = rgb;
     }

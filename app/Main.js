@@ -22,8 +22,6 @@ class Main {
    * Setting live display so it could initi listener
    *
    */
-
-
   setLiveDisplay() {
     this.liveDisplayEl.addEventListener('dragover', this.liveDragOver);
     this.liveDisplayEl.addEventListener('dragenter', this.liveDragEnter);
@@ -49,7 +47,6 @@ class Main {
     if (Data.getcurrentDragOverDivId() === that.liveDisplayEl.id) {
       console.log('true')
     }
-
   }
 
 }

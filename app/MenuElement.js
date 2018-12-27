@@ -1,9 +1,8 @@
 console.log("MenuElement.js");
 const TAG = "MenuElement.js";
-// let thatMenuElement;
+
 class MenuElement {
   constructor(id) {
-    // thatMenuElement = this;
     this.id = id;
     this.element = document.getElementById(id);
     this.eventListener();
@@ -12,23 +11,14 @@ class MenuElement {
 
   // on drag start gets element type and then creates new element on drag end
   eventListener() {
-    console.log("before id:", this.id);
-    document
-      .getElementById(this.id)
-      .addEventListener("dragstart", this.showFunction);
-    console.log('dragStart', this.id)
-    document
-      .getElementById(this.id)
-      .addEventListener("dragend", this.createNewElement);
-  }
-  showFunction() {
-    console.log("hello ", this.id);
+    console.log("DragStart, MenuItem Id:", this.id);
+    document.getElementById(this.id).addEventListener("dragend", this.createNewElement);
   }
 
 
-  // creates new Element
+  //Creates New Element Object
   createNewElement() {
-    console.log("createNewEl ", this.id);
+    console.log("createNewElement() id: ", this.id);
 
     switch (this.id) {
       case "create-section":
@@ -65,4 +55,6 @@ class MenuElement {
         break;
     }
   }
+
+
 }

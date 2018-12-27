@@ -43,14 +43,14 @@ class NavBar extends HTML {
       nodes[i].childNodes[0].style.textDecoration = 'none';
     }
 
+
+
     super.setHtmlParentId(this.parentId);
     super.setHtmlId(this.id);
     super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
 
-
     console.log('child appended', document.getElementById(this.parentId).style.position);
-
   }
 
 
@@ -64,9 +64,10 @@ class NavBar extends HTML {
         returnElement = this.generateNewNavBar();
         break;
     }
-
     return returnElement;
   }
+
+
 
   generateNewNavBar() {
     var returnObject = document.createElement('div');
@@ -77,7 +78,6 @@ class NavBar extends HTML {
 
     var ulEl = document.createElement('ul');
 
-    // liEl.appendChild(a1);
     ulEl.appendChild(this.addLi('Home'));
     ulEl.appendChild(this.addLi('Profile'));
     ulEl.appendChild(this.addLi('About'));
@@ -91,7 +91,6 @@ class NavBar extends HTML {
   /*=============================================
   =            Takes Content and gives out listItem            =
   =============================================*/
-
   addLi(contentText) {
     var liEl = document.createElement('li');
     var a1 = document.createElement('a');
@@ -101,10 +100,6 @@ class NavBar extends HTML {
     liEl.appendChild(a1);
 
     return liEl;
-
   }
-
-
-
 
 }

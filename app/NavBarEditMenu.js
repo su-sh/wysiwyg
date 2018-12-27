@@ -14,10 +14,7 @@ class NavBarMenu {
   }
 
   addEvent() {
-    this.addMenuItemEl.addEventListener(
-      "mousedown",
-      this.addMenuItem.bind(this)
-    );
+    this.addMenuItemEl.addEventListener("mousedown", this.addMenuItem.bind(this));
     this.removeMenuItemEl.addEventListener("mousedown", this.removeMenuItem);
   }
 
@@ -25,8 +22,7 @@ class NavBarMenu {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === "nav") {
       console.log("addMenuEL");
 
-      let ulEl = document.getElementById(Data.getCurrentMouseClickElId())
-        .firstElementChild;
+      let ulEl = document.getElementById(Data.getCurrentMouseClickElId()).firstElementChild;
       // console.log(ulEl);
       ulEl.appendChild(this.addLi("new"));
     }

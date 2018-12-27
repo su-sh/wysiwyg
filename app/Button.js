@@ -28,8 +28,10 @@ class Button extends HTML {
   }
 
   createDefaultButtonElement() {
-    console.log('ButtonClass: Create new Buttonel');
+    console.log('ButtonClass: Create new ButtoneEl');
+
     var returnObject = document.createElement('a');
+
     returnObject.id = this.id;
     returnObject.innerHTML = 'Button';
     returnObject.style.backgroundColor = '#44c767';

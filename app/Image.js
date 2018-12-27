@@ -15,22 +15,6 @@ class ImageDiv extends HTML {
   }
 
 
-  // removeDragRresizeDelete(e) {
-  //   console.log('custom event')
-  //   console.log(e.detail);
-  //   this.dragger.removeDragger();
-  //   this.deleter.removeDeleter();
-  //   this.resizer.removeResizer();
-  //   Data.removeOutlines();
-  // }
-
-  // showDragRresizeDelete() {
-  //   this.dragger.init();
-  //   this.deleter.init();
-  //   this.resizer.init();
-  // }
-
-
   // creates&appends child then update parent
   init() {
 
@@ -45,6 +29,8 @@ class ImageDiv extends HTML {
     super.addClickHoverEvents();
   }
 
+
+
   generateNewImageElement() {
 
     let returnObject = document.createElement('div');
@@ -52,7 +38,6 @@ class ImageDiv extends HTML {
     returnObject.style.position = 'relative';
     returnObject.style.width = '100px';
     returnObject.style.height = 'auto';
-
 
     let imageElement = document.createElement('img');
     returnObject.appendChild(imageElement);
@@ -71,4 +56,5 @@ class ImageDiv extends HTML {
     e.stopPropagation();
     Data.setCurrentMouseClickElId(this.imageEl.id);
   }
+
 }

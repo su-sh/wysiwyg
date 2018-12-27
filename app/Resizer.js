@@ -5,10 +5,8 @@ class Resizer {
     this.parentEl = parentEl;
     this.resizerElement = undefined;
     this.eventHandler = undefined;
-    console.log('resizer', parent);
 
     this.init();
-
   }
 
 
@@ -24,8 +22,8 @@ class Resizer {
     this.resizerElement.style.cursor = 'se-resize';
     this.resizerElement.contentEditable = false;
 
-    console.log(this.resizerElement);
-    console.log('parent', this.parentEl);
+    // console.log(this.resizerElement);
+    // console.log('parent', this.parentEl);
 
     this.parentEl.appendChild(this.resizerElement);
     this.resizerElement.addEventListener('mousedown', this.initResize.bind(this), false);
@@ -38,15 +36,19 @@ class Resizer {
 
   initResize(e) {
     console.log('initResize');
-    this.eventHandler = this.Resize.bind(this);
+    this.eventHandler = this.resize.bind(this);
     window.addEventListener('mousemove', this.eventHandler, false);
     window.addEventListener('mouseup', this.stopResize.bind(this), false);
   }
-  Resize(e) {
+
+
+  resize(e) {
     console.log('Resize')
     this.parentEl.style.width = (e.pageX - this.parentEl.offsetLeft) + 'px';
     this.parentEl.style.height = (e.pageY - this.parentEl.offsetTop) + 'px';
   }
+
+
   stopResize(e) {
     console.log('mouseup');
     window.removeEventListener('mousemove', this.eventHandler, false);

@@ -1,13 +1,10 @@
 console.log('Menu.js');
 
-let thatMenu = undefined;
 class Menu {
 
   constructor(liveTest) {
-    thatMenu = this;
     this.liveTestElement = liveTest;
     this.init();
-
   }
 
   init() {
@@ -22,7 +19,6 @@ class Menu {
     new DivMenu();
     new UploadImageMenu();
     new GenerateHTML();
-
   }
 
 }

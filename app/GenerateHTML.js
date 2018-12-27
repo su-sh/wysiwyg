@@ -24,19 +24,17 @@ class GenerateHTML {
 
   removeContentEditable() {
     this.startRemove().then(this.generateElement.bind(this));
-
   }
 
   startRemove(x) {
-    var promise = new Promise(function (resolve, reject) {
+    let promise = new Promise(function (resolve, reject) {
       thatGenerate.contentEditableItems = [];
       thatGenerate.contentEditableItems = document.querySelectorAll('[contenteditable=true]');
 
-      for (var i = 0; i < thatGenerate.contentEditableItems.length; i++) {
+      for (let i = 0; i < thatGenerate.contentEditableItems.length; i++) {
         console.log('editables', thatGenerate.contentEditableItems[i]);
         thatGenerate.contentEditableItems[i].setAttribute("contenteditable", false);
       }
-
 
       resolve();
     });
@@ -45,21 +43,21 @@ class GenerateHTML {
 
   generateElement() {
     // Create the event
-    var hideEvent = new CustomEvent("hide-d-r-d", {
+    let hideEvent = new CustomEvent("hide-d-r-d", {
       "detail": "Hide Drag Resize Delete "
     });
 
     document.dispatchEvent(hideEvent);
 
     console.log(this.downloadBtnEl);
-    console.log(document.getElementById('live-display').innerHTML)
+    console.log(document.getElementById('live-display').innerHTML);
 
     let htmlContent = `
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Page Title</title>
+  <title>WYSIWYG</title>
   <style>
   html, body {
   padding: 0;
@@ -78,17 +76,17 @@ ${document.getElementById('live-display').innerHTML}
 
 </body>
 </html>
-
 `;
+
+
     this.download('index.html', htmlContent);
 
     for (let i = 0; i < thatGenerate.contentEditableItems.length; i++) {
       thatGenerate.contentEditableItems[i].setAttribute("contenteditable", true);
-
     }
 
 
-    var showEvent = new CustomEvent("show-d-r-d", {
+    let showEvent = new CustomEvent("show-d-r-d", {
       "detail": "Show Drag Resize Delete "
     });
 
@@ -97,7 +95,7 @@ ${document.getElementById('live-display').innerHTML}
   }
 
   download(filename, text) {
-    var element = document.createElement('a');
+    let element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
 

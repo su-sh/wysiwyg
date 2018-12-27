@@ -1,5 +1,5 @@
 console.log('Section.js');
-const DEFAULT_HEIGHT = 20
+// const DEFAULT_HEIGHT = 20;
 class Section extends HTML {
 
   constructor(parentId, sectionType) {
@@ -24,7 +24,6 @@ class Section extends HTML {
     super.setHtmlId(this.id);
     super.setDraggerResizerDeleter();
     super.addClickHoverEvents();
-
 
     this.sectionEl.addEventListener('dragover', this.dragOver.bind(this));
   }
@@ -55,7 +54,7 @@ class Section extends HTML {
     return returnElement;
   }
 
-  // generates new section
+  //generates new default type section
   generateNewDefaultSection() {
     console.log('func generateNewSection');
     var returnObject = document.createElement('div');

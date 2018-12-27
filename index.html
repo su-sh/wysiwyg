@@ -11,19 +11,18 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
 
-
   <!-- appcss -->
-
-
   <link rel="stylesheet" type="text/css" media="screen" href="./app/css/style.css" />
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Lobster+Two|Maven+Pro|Open+Sans|Roboto|Ubuntu|Vollkorn"
     rel="stylesheet">
 
-
   <!-- ICON  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
 
   <style>
     [draggable] {
@@ -42,12 +41,11 @@
 
 <body>
 
-
   <div class="container">
+
 
     <div class="header">
       <div class="top-menu clearfix">
-
         <div class="logo left">
           <img src="./app/asset/logo3.png" alt="logo">
           <div class="app-title">WYSIWYG</div>
@@ -60,7 +58,6 @@
 
           <div class="drag-items">
             <div id="create-section" class="create-menu" draggable="true">
-
               SECTION
             </div>
 
@@ -71,6 +68,7 @@
             <div id="create-image" class="create-menu" draggable="true">
               IMAGE
             </div>
+
             <div id="create-text" class="create-menu" draggable="true">
               TEXT
             </div>
@@ -86,43 +84,38 @@
         </div>
 
 
-
         <div class="download-html right">
-
           <input type="button" id="download-btn" value="DownloadHTML">
-
-
         </div>
+
       </div>
 
 
 
-      <!-- bottom -->
+      <!-- bottom menu -->
       <div class="bottom-menu clearfix">
-
-
-
         <div class="text-menu left">
           <div class="text-alignment clearfix group left">
-            <div id="center-align-text" class="menu-item  left" title="Align Center">
+
+            <div id="center-align-text" class="menu-item  left" title="Text: Align Center">
               <i class="material-icons">
                 format_align_center
               </i>
             </div>
 
-            <div id="justify-align-text" class="menu-item  left" title="Align Justify">
+            <div id="justify-align-text" class="menu-item  left" title="Text: Align Justify">
               <i class="material-icons">
                 format_align_justify
               </i>
             </div>
 
-            <div id="left-align-text" class=" menu-item left" title="Align Left">
+            <div id="left-align-text" class=" menu-item left" title="Text: Align Left">
               <i class="material-icons">
                 format_align_left
               </i>
             </div>
 
-            <div id="right-align-text" class=" menu-item left" title="Align Right">
+            <div id="right-align-text" class=" menu-item left" title="Text: Align Right">
               <i class="material-icons">
                 format_align_right
               </i>
@@ -132,28 +125,26 @@
 
 
           <div class="font-weight-menu clearfix left group">
-            <div id="bold-text" class="menu-item left" title="Bold">
+            <div id="bold-text" class="menu-item left" title="Text: Bold">
               <i class="material-icons">
                 format_bold
               </i>
             </div>
 
-            <div id="italic-text" class="left menu-item" title="Italic">
+            <div id="italic-text" class="left menu-item" title="Text: Italic">
               <i class="material-icons">
                 format_italic
               </i>
             </div>
 
-
-            <div id="underline-text" class="left menu-item" title="Underline">
+            <div id="underline-text" class="left menu-item" title="Text: Underline">
               <i class="material-icons">
                 format_underlined
               </i>
             </div>
 
-
             <div class="left menu-item">
-              <div id="color-text" title="Text color picker">
+              <div id="color-text" title="Text: Color picker">
                 <i class="material-icons">
                   colorize
                 </i>
@@ -161,24 +152,12 @@
 
               <div class="canvas" style="position:relative">
                 <canvas id="txt-cp-cvs" style="position: absolute; display: none">
-
                 </canvas>
               </div>
 
             </div>
           </div>
 
-
-          <!--
-  font-family: 'Lobster', cursive;
-  font-family: 'Lobster Two', cursive;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Vollkorn', serif;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Ubuntu', sans-serif;
-  font-family: 'Maven Pro', sans-serif;
-  -->
           <div class="font-family-menu left clearfix group">
             <div class="select-font left">
               <select id="text-font-select" class="select-font menu-item">
@@ -195,71 +174,68 @@
             <input id="text-size-select" type="number" class="menu-item left" value="16">
 
           </div>
-          <!--
-          <div class="font-size-menu left">
-          </div> -->
 
         </div>
 
 
         <div class="div-menu clearfix left group">
-          <div id="div-shrink-width" title="Shrink Width" class="menu-item left">
+          <div id="div-shrink-width" title="Div: Shrink Width" class="menu-item left">
             <i class="material-icons">
               compare_arrows
             </i>
           </div>
-          <div id="div-expand-width" class="menu-item left" title="Expand Width">
+          <div id="div-expand-width" class="menu-item left" title="Div: Expand Width">
             <i class="material-icons">
               swap_horiz
             </i>
           </div>
           <div class="color-menu left" style="position: relative;">
-            <div class="div-color-picker menu-item" id="div-color-picker" title="Div Color Pallet">
+            <div class="div-color-picker menu-item" id="div-color-picker" title="Div: Color Pallet">
               <i class="material-icons">
                 color_lens
               </i>
-
             </div>
 
             <div class="canvas" style="position:relative">
               <canvas id="div-cp-cvs" style="position: absolute; display: none">
-
               </canvas>
             </div>
-
 
           </div>
 
           <div class="flex-menu  left clearfix">
-            <div id="flex-row" class="left menu-item" title="Align Div Child Horizontal">
+            <div id="flex-row" class="left menu-item" title="Div: Align Child Horizontal">
               <i class="material-icons">
                 panorama_horizontal
               </i>
             </div>
-            <div id="flex-column" class="menu-item left" title="Align Div Child Vertical">
+
+            <div id="flex-column" class="menu-item left" title="Div: Align Child Vertical">
               <i class="material-icons">
                 panorama_vertical
               </i>
             </div>
 
-            <div id="flex-clear" class="left menu-item" title="Clear Div Child VerticalHorizontal">
+            <div id="flex-clear" class="left menu-item" title="Div: Clear Child VerticalHorizontal">
               <i class="material-icons">
                 clear
               </i>
             </div>
+
           </div>
+
         </div>
 
 
         <div class="nav-menu left group">
 
-          <div class="nav-menu-el menu-item" id="add-nav-item" title="Add Child">
+          <div class="nav-menu-el menu-item" id="add-nav-item" title="NavBar: Add Child">
             <i class="material-icons">
               add
             </i>
           </div>
 
-          <div class="nav-menu-el menu-item" id="remove-nav-item" title="Add Child">
+          <div class="nav-menu-el menu-item" id="remove-nav-item" title="NavBar: Remove Child">
             <i class="material-icons">
               remove
             </i>
@@ -269,7 +245,6 @@
 
 
         <div class="img-menu left group-last">
-          <!-- <input type="file" class="img-menu-el" id="add-image"> -->
 
           <div>
             <div id="add-image-btn" class=" menu-item left">
@@ -278,7 +253,7 @@
 
             <div id="add-image" class="left clearfix">
               <input type="text" id="add-img-url" class="left" placeholder="Paste Image Url">
-              <button id="add-img-btn" class="add-img menu-item left">
+              <button id="add-img-btn" class="add-img menu-item left" title="Image: Add Image">
                 <i class="material-icons">
                   add_photo_alternate
                 </i>
@@ -286,7 +261,7 @@
             </div>
 
 
-            <div class="menu-item img-menu-el left" id="remove-image">
+            <div class="menu-item img-menu-el left" id="remove-image" title="Image: Remove Image">
               <i class="material-icons">
                 remove_from_queue
               </i>
@@ -315,14 +290,16 @@
     </div>
 
 
-    <div class="main-container clearfix">
 
+
+    <div class="main-container clearfix">
       <div class="new-edit" id="live-display">
         <!-- live test -->
       </div>
-
-
     </div>
+
+
+
 
   </div>
 
@@ -330,6 +307,7 @@
   <script src="./app/Main.js"></script>
   <script src="./app/Menu.js"></script>
   <script src="./app/MenuElement.js"></script>
+
 
   <script src="./app/HTML.js"></script>
   <script src="./app/Section.js"></script>
@@ -348,7 +326,6 @@
 
   <script src="./app/Resizer.js"></script>
   <script src="./app/Deleter.js"></script>
-
   <script src="./app/Dragger.js"></script>
 
 
@@ -364,17 +341,17 @@
 </body>
 
 <script>
-  var main = new Main();
+  let main = new Main();
 
 
+  // mozilla draggable
   window.onload = function () {
-    var dragItems = document.querySelectorAll('[draggable=true]');
-
-    for (var i = 0; i < dragItems.length; i++) {
+    let dragItems = document.querySelectorAll('[draggable=true]');
+    for (let i = 0; i < dragItems.length; i++) {
       dragItems[i].addEventListener('dragstart', function (event) {
         event.dataTransfer.setData(' ', this.id);
       });
-      console.log('done')
+      console.log('done');
     }
 
   };

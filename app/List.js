@@ -13,6 +13,7 @@ class List extends HTML {
     this.addEvent();
   }
 
+
   init() {
     this.listEl = this.createNewElement();
     document.getElementById(this.parentId).appendChild(this.listEl);
@@ -25,10 +26,12 @@ class List extends HTML {
 
   }
 
+
   createNewElement() {
     let returnEl = this.generateNewList();
     return returnEl;
   }
+
 
   generateNewList() {
     var returnObject = document.createElement("div");
@@ -44,6 +47,7 @@ class List extends HTML {
     return returnObject;
   }
 
+
   addLi(contentText) {
     var liEl = document.createElement("li");
     liEl.contentEditable = true;
@@ -52,10 +56,12 @@ class List extends HTML {
     return liEl;
   }
 
+
   addEvent() {
     console.log("sushant");
     this.listEl.addEventListener("keydown", this.eventListener.bind(this));
   }
+
 
   eventListener(evt) {
     if (evt.keyCode == 13) {
@@ -80,4 +86,6 @@ class List extends HTML {
       console.log(this.listEl.firstElementChild.childNodes.length);
     }
   }
+
+
 }

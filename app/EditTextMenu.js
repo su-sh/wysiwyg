@@ -53,16 +53,12 @@ class EditTextMenu {
 
   }
 
-  loadImage() {
-    this.fontColorCanvasContext.drawImage(img1, 0, 0);
-
-  }
 
   addEvent() {
     this.centerAlignTextEL.addEventListener('mousedown', this.changeCenterAlignText.bind(this));
-    this.justifyAlignTextEl.addEventListener('mousedown', this.changeJustifyAlignText);
+    this.justifyAlignTextEl.addEventListener('mousedown', this.changeJustifyAlignText.bind(this));
     this.leftAlignText.addEventListener('mousedown', this.changeLeftAlignText.bind(this));
-    this.rightAlignTextEl.addEventListener('mousedown', this.changeRightAlignText);
+    this.rightAlignTextEl.addEventListener('mousedown', this.changeRightAlignText.bind(this));
 
     this.boldTextEl.addEventListener('mousedown', this.changeBoldText);
     this.italicTextEl.addEventListener('mousedown', this.changeItalicText);
@@ -83,6 +79,12 @@ class EditTextMenu {
 
   }
 
+
+
+  loadImage() {
+    this.fontColorCanvasContext.drawImage(img1, 0, 0);
+  }
+
   hideShow() {
     if (this.fontColorCanvasEl.style.display == "none") {
       this.fontColorCanvasEl.style.display = "";
@@ -90,6 +92,7 @@ class EditTextMenu {
       this.fontColorCanvasEl.style.display = "none";
     }
   }
+
   setRGB(e) {
     var offsetLeft = document.getElementById("txt-cp-cvs").offsetLeft;
     var offsetTop = document.getElementById("txt-cp-cvs").offsetTop;
@@ -133,6 +136,7 @@ class EditTextMenu {
   changeTextSize() {
     this.setTextSize(this.fontSizeMenuInputEl.value);
   }
+
   setTextSize(textSize) {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
       console.log('bold')
@@ -140,6 +144,8 @@ class EditTextMenu {
       this.fontSizeMenuInputEl.style.fontFamily = this.fontFamilyMenuSelect.style.fontFamily;
     }
   }
+
+
   /*=============================================
   =            Text alignment            =
   =============================================*/
@@ -184,37 +190,13 @@ class EditTextMenu {
 
   /*=====  End of Text alignment  ======*/
 
+
+
+
+
   /*=============================================
   =            TextAlign            =
   =============================================*/
-
-  changeCenterAlignText() {
-
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'center') {
-        // this.centerAlignTextEL.style.backgroundColor = 'white';
-        this.centerAlignTextEL.style.backgroundColor = 'white';
-        console.log(this.centerAlignTextEL.id);
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'center';
-      } else {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
-        this.centerAlignTextEL.style.backgroundColor = 'inherit';
-      }
-
-    }
-    console.log(Utils.getIdType(Data.getCurrentMouseClickElId()));
-  }
-
-  changeJustifyAlignText() {
-    console.log('inside Justify');
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'justify') {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'justify';
-      } else {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
-      }
-    }
-  }
 
   changeAlign(type) {
     if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
@@ -227,30 +209,35 @@ class EditTextMenu {
     }
   }
 
+
+  changeJustifyAlignText() {
+    console.log('inside Justify');
+    // justify
+    this.changeAlign('justify');
+
+  }
+
+
+
+  changeCenterAlignText() {
+    console.log('inside center');
+    // center
+    this.changeAlign('center');
+
+  }
+
+
+
   changeLeftAlignText() {
     console.log('changeLeft');
     this.changeAlign('left');
-    // if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
 
-    //   if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'left') {
-    //     document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'left';
-    //   } else {
-    //     document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
-    //   }
-    // }
   }
+
   changeRightAlignText() {
     console.log('changeRight')
-    if (Utils.getIdType(Data.getCurrentMouseClickElId()) === 'txt') {
-
-      if (document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign != 'right') {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = 'right';
-      } else {
-        document.getElementById(Data.getCurrentMouseClickElId()).style.textAlign = '';
-      }
-    }
+    this.changeAlign('right');
   }
-
   /*=====  End of TextAlign  ======*/
 
 }

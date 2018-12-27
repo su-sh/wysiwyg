@@ -7,8 +7,9 @@ class Deleter {
     this.deleterEl = undefined;
     this.eventHandler = undefined;
     this.init();
-    console.log('deleter');
   }
+
+
 
   init() {
     this.deleterEl = document.createElement('div');
@@ -18,37 +19,37 @@ class Deleter {
     this.deleterEl.style.position = 'absolute';
     this.deleterEl.style.right = 0;
     this.deleterEl.style.top = 0;
-    let url = './app/asset/close.png';
-    // this.deleterEl.style.backgroundImage = `url('${url}')`;
     this.deleterEl.style.background = 'red';
 
-    this.deleterEl.style.backgroundImage = 'url(' + './app/asset/close.png' + ')';
-    this.deleterEl.title = 'delete Element';
-    // this.deleterEl.style.cursor = 'p';
+    // let url = './app/asset/close.png';
+    // this.deleterEl.style.backgroundImage = 'url(' + './app/asset/close.png' + ')';
+
+    this.deleterEl.title = 'Delete Element';
+    // this.deleterEl.style.cursor = 'pointer';
+
     this.deleterEl.contentEditable = false;
-
     this.parentEl.appendChild(this.deleterEl);
-
     this.deleterEl.addEventListener('mousedown', this.initDelete.bind(this), false);
+
   }
+
+
+
+  initDelete(e) {
+    e.stopPropagation();
+    let answer = confirm("Delete Element?")
+    if (answer) {
+      // this.eventHandler = this.deleteEl.bind(this);
+      console.log('grandParent', this.grandParentEl);
+      this.grandParentEl.removeChild(this.parentEl);
+    }
+  }
+
+
 
   removeDeleter() {
     this.parentEl.removeChild(this.deleterEl);
   }
 
-  initDelete(e) {
-    e.stopPropagation();
 
-    let answer = confirm("Delete Element?")
-    if (answer) {
-      this.eventHandler = this.deleteEl.bind(this);
-      console.log('grandParent', this.grandParentEl);
-      this.grandParentEl.removeChild(this.parentEl);
-    }
-
-    // window.addEventListener('mouseup', this.stopDelete.bind(this), false);
-  }
-  deleteEl() {
-
-  }
 }

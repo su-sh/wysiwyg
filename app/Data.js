@@ -16,13 +16,14 @@ class Data {
     this.prevMouseOverElId = undefined;
     /*=====  End of mouseOver  ======*/
 
+
+
+
     /*=============================================
     =            mouseClicked            =
     =============================================*/
-
     this.currentMouseClickElId = undefined;
     this.prevMouseClickElId = undefined;
-
     /*=====  End of mouseClicked  ======*/
 
   }
@@ -45,13 +46,11 @@ class Data {
 
     for (var i = 0; i < contentEditableItems.length; i++) {
       console.log('editables', contentEditableItems[i]);
-
     }
   }
 
 
   static showOutlines() {
-
     this.setCurrentMouseOverElId(this.currentMouseOverElId);
     this.setCurrentMouseClickElId(this.currentMouseClickElId);
   }
@@ -65,6 +64,7 @@ class Data {
     this.currentMenu = data;
   }
 
+
   /*=============================================
   =            Dom Tree getter and setter            =
   =============================================*/
@@ -77,11 +77,10 @@ class Data {
   }
   /*=====  End of Dom Tree getter and setter  ======*/
 
-  /*=============================================
-  =            Dom list             =
-  =============================================*/
 
-  /*=====  End of Dom list   ======*/
+
+
+
 
   /*=============================================
   =            GetSet current DragOverElement            =
@@ -103,10 +102,6 @@ class Data {
 
 
 
-
-
-
-
   /*=============================================
   =            MouseOver Div hover            =
   =============================================*/
@@ -118,11 +113,9 @@ class Data {
     // if (document.getElementById(this.currentMouseOverElId))
 
     if (this.currentMouseClickElId != this.currentMouseOverElId) {
-      document.getElementById(this.currentMouseOverElId).style.outline =
-        "1px solid black";
+      document.getElementById(this.currentMouseOverElId).style.outline = "1px solid black";
 
-      document.getElementById(this.currentMouseOverElId).style.outlineStyle =
-        "dashed";
+      document.getElementById(this.currentMouseOverElId).style.outlineStyle = "dashed";
 
       // document.getElementById(this.currentMouseOverElId).style.opacity = '.8';
       // child node
@@ -155,41 +148,9 @@ class Data {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   /*=============================================
   =            MouseClick            =
   =============================================*/
-
-  static setCurrentMouseClickElId(mouseClickElId) {
-    this.prevMouseClickElId = this.currentMouseClickElId;
-    this.currentMouseClickElId = mouseClickElId;
-
-    console.log(
-      "Data=",
-      this.currentMouseClickElId,
-      document.getElementById(this.currentMouseClickElId)
-    );
-    document.getElementById(this.currentMouseClickElId).style.outline =
-      "1px solid green";
-    document.getElementById(this.currentMouseClickElId).style.zIndex = "100";
-
-    if (this.prevMouseClickElId != this.currentMouseClickElId) {
-      document.getElementById(this.prevMouseClickElId).style.outline = "";
-      document.getElementById(this.currentMouseClickElId).style.zIndex = "0";
-    }
-  }
 
   static getCurrentMouseClickElId() {
     return this.currentMouseClickElId;
@@ -198,8 +159,27 @@ class Data {
   static getRemoveContentEditStart() {
     return this.removeContentEditStart;
   }
+
   static setRemoveContentEditStart(bool) {
     this.removeContentEditStart = bool;
   }
+
+  static setCurrentMouseClickElId(mouseClickElId) {
+    this.prevMouseClickElId = this.currentMouseClickElId;
+    this.currentMouseClickElId = mouseClickElId;
+
+    console.log("Data=", this.currentMouseClickElId, document.getElementById(this.currentMouseClickElId));
+    document.getElementById(this.currentMouseClickElId).style.outline = "1px solid green";
+    document.getElementById(this.currentMouseClickElId).style.zIndex = "100";
+
+    if (this.prevMouseClickElId != this.currentMouseClickElId) {
+      document.getElementById(this.prevMouseClickElId).style.outline = "";
+      document.getElementById(this.currentMouseClickElId).style.zIndex = "0";
+    }
+  }
+
+
   /*=====  End of MouseClick  ======*/
+
+
 }
